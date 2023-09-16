@@ -51,7 +51,6 @@ export default function Home() {
     const myHeight = ((!isMobile) ? "calc(100vh - 170px)" : "calc(50vh - 85px)");
 
     useEffect(() => {
-        setSourceCode("");
         fetchData();
     }, []);
 
