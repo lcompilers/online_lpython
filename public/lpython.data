@@ -1,0 +1,4003 @@
+from lpython import c64, ccall, f64, overload, c32, f32
+
+pi: f64 = 3.141592653589793238462643383279502884197
+e: f64 = 2.718281828459045235360287471352662497757
+tau: f64 = 6.283185307179586
+
+
+@ccall
+def _lfortran_zexp(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_cexp(x: c32) -> c32:
+    pass
+
+@overload
+def exp(x: c64) -> c64:
+    return _lfortran_zexp(x)
+
+@overload
+def exp(x: c32) -> c32:
+    return _lfortran_cexp(x)
+
+
+@ccall
+def _lfortran_zlog(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_clog(x: c32) -> c32:
+    pass
+
+@overload
+def log(x: c64) -> c64:
+    return _lfortran_zlog(x)
+
+@overload
+def log(x: c32) -> c32:
+    return _lfortran_clog(x)
+
+
+@ccall
+def _lfortran_zsqrt(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_csqrt(x: c32) -> c32:
+    pass
+
+@overload
+def sqrt(x: c64) -> c64:
+    return _lfortran_zsqrt(x)
+
+@overload
+def sqrt(x: c32) -> c32:
+    return _lfortran_csqrt(x)
+
+
+@ccall
+def _lfortran_zacos(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_cacos(x: c32) -> c32:
+    pass
+
+@overload
+def acos(x: c64) -> c64:
+    return _lfortran_zacos(x)
+
+@overload
+def acos(x: c32) -> c32:
+    return _lfortran_cacos(x)
+
+@ccall
+def _lfortran_zasin(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_casin(x: c32) -> c32:
+    pass
+
+@overload
+def asin(x: c64) -> c64:
+    return _lfortran_zasin(x)
+
+@overload
+def asin(x: c32) -> c32:
+    return _lfortran_casin(x)
+
+@ccall
+def _lfortran_zatan(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_catan(x: c32) -> c32:
+    pass
+
+@overload
+def atan(x: c64) -> c64:
+    return _lfortran_zatan(x)
+
+@overload
+def atan(x: c32) -> c32:
+    return _lfortran_catan(x)
+
+@ccall
+def _lfortran_zcos(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_ccos(x: c32) -> c32:
+    pass
+
+@overload
+def cos(x: c64) -> c64:
+    return _lfortran_zcos(x)
+
+@overload
+def cos(x: c32) -> c32:
+    return _lfortran_ccos(x)
+
+@ccall
+def _lfortran_zsin(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_csin(x: c32) -> c32:
+    pass
+
+@overload
+def sin(x: c64) -> c64:
+    return _lfortran_zsin(x)
+
+@overload
+def sin(x: c32) -> c32:
+    return _lfortran_csin(x)
+
+@ccall
+def _lfortran_ztan(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_ctan(x: c32) -> c32:
+    pass
+
+@overload
+def tan(x: c64) -> c64:
+    return _lfortran_ztan(x)
+
+@overload
+def tan(x: c32) -> c32:
+    return _lfortran_ctan(x)
+
+
+@ccall
+def _lfortran_zacosh(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_cacosh(x: c32) -> c32:
+    pass
+
+@overload
+def acosh(x: c64) -> c64:
+    return _lfortran_zacosh(x)
+
+@overload
+def acosh(x: c32) -> c32:
+    return _lfortran_cacosh(x)
+
+@ccall
+def _lfortran_zasinh(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_casinh(x: c32) -> c32:
+    pass
+
+@overload
+def asinh(x: c64) -> c64:
+    return _lfortran_zasinh(x)
+
+@overload
+def asinh(x: c32) -> c32:
+    return _lfortran_casinh(x)
+
+@ccall
+def _lfortran_zatanh(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_catanh(x: c32) -> c32:
+    pass
+
+@overload
+def atanh(x: c64) -> c64:
+    return _lfortran_zatanh(x)
+
+@overload
+def atanh(x: c32) -> c32:
+    return _lfortran_catanh(x)
+
+
+@ccall
+def _lfortran_zcosh(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_ccosh(x: c32) -> c32:
+    pass
+
+@overload
+def cosh(x: c64) -> c64:
+    return _lfortran_zcosh(x)
+
+@overload
+def cosh(x: c32) -> c32:
+    return _lfortran_ccosh(x)
+
+@ccall
+def _lfortran_zsinh(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_csinh(x: c32) -> c32:
+    pass
+
+@overload
+def sinh(x: c64) -> c64:
+    return _lfortran_zsinh(x)
+
+@overload
+def sinh(x: c32) -> c32:
+    return _lfortran_csinh(x)
+
+
+@ccall
+def _lfortran_ztanh(x: c64) -> c64:
+    pass
+
+@ccall
+def _lfortran_ctanh(x: c32) -> c32:
+    pass
+
+@overload
+def tanh(x: c64) -> c64:
+    return _lfortran_ztanh(x)
+
+@overload
+def tanh(x: c32) -> c32:
+    return _lfortran_ctanh(x)
+
+
+@ccall
+def _lfortran_zphase(x: c64) -> f64:
+    pass
+
+@ccall
+def _lfortran_cphase(x: c32) -> f32:
+    pass
+
+@overload
+def phase(x: c64) -> f64:
+    return _lfortran_zphase(x)
+
+@overload
+def phase(x: c32) -> f32:
+    return _lfortran_cphase(x)
+
+
+@overload
+def polar(x: c32) -> tuple[f32, f32]:
+    return (abs(x), phase(x))
+
+@overload
+def polar(x: c64) -> tuple[f64, f64]:
+    return (abs(x), phase(x))
+
+@ccall
+def _lfortran_dcos(x: f64) -> f64:
+    pass
+
+@ccall
+def _lfortran_dsin(x: f64) -> f64:
+    pass
+
+def rect(r: f64, phi: f64) -> c64:
+    return c64(complex(r*_lfortran_dcos(phi), r*_lfortran_dsin(phi)))
+from inspect import getfullargspec, getcallargs, isclass, getsource
+import os
+import ctypes
+import platform
+from dataclasses import dataclass, field, is_dataclass as py_is_dataclass
+import functools
+
+
+# TODO: this does not seem to restrict other imports
+__slots__ = ["i8", "i16", "i32", "i64", "u8", "u16", "u32", "u64", "f32", "f64", "c32", "c64", "CPtr",
+        "overload", "ccall", "TypeVar", "pointer", "c_p_pointer", "Pointer",
+        "p_c_pointer", "vectorize", "inline", "Union", "static",
+        "packed", "Const", "sizeof", "ccallable", "ccallback", "Callable",
+        "Allocatable", "In", "Out", "InOut", "dataclass", "field", "S"]
+
+# data-types
+
+type_to_convert_func = {
+    "i1": bool,
+    "i8": int,
+    "i16": int,
+    "i32": int,
+    "i64": int,
+    "u8": int,
+    "u16": int,
+    "u32": int,
+    "u64": int,
+    "f32": float,
+    "f64": float,
+    "c32": complex,
+    "c64": complex,
+    "c_ptr": lambda x: x,
+    "Const": lambda x: x,
+    "Callable": lambda x: x,
+    "Allocatable": lambda x: x,
+    "Pointer": lambda x: x,
+    "S": lambda x: x,
+}
+
+class Type:
+    def __init__(self, name):
+        self._name = name
+        self._convert = type_to_convert_func[name]
+
+    def __getitem__(self, params):
+        return Array(self, params)
+
+    def __call__(self, arg):
+        return self._convert(arg)
+
+def is_ctypes_Structure(obj):
+    return (isclass(obj) and issubclass(obj, ctypes.Structure))
+
+def is_dataclass(obj):
+    return ((isclass(obj) and issubclass(obj, ctypes.Structure)) or
+             py_is_dataclass(obj))
+
+class PointerType(Type):
+    def __getitem__(self, type):
+        if is_dataclass(type):
+            return convert_to_ctypes_Structure(type)
+        return type
+
+class ConstType(Type):
+    def __getitem__(self, type):
+        return type
+
+class Array:
+    def __init__(self, type, dims):
+        self._type = type
+        self._dims = dims
+
+    def __class_getitem__(self, params):
+        return Array(params[0], params[1:])
+
+i1 = Type("i1")
+i8 = Type("i8")
+i16 = Type("i16")
+i32 = Type("i32")
+i64 = Type("i64")
+u8 = Type("u8")
+u16 = Type("u16")
+u32 = Type("u32")
+u64 = Type("u64")
+f32 = Type("f32")
+f64 = Type("f64")
+c32 = Type("c32")
+c64 = Type("c64")
+CPtr = Type("c_ptr")
+Const = ConstType("Const")
+Callable = Type("Callable")
+Allocatable = Type("Allocatable")
+Pointer = PointerType("Pointer")
+S = Type("S")
+
+
+class Union:
+    def __init__(self):
+        pass
+
+    def __setattr__(self, name: str, value):
+        self.__dict__[name] = value
+
+    def __getattr__(self, name: str):
+        return self.__dict__[name]
+
+class Intent:
+    def __init__(self, type):
+        self._type = type
+
+    def __getitem__(self, params):
+        return params
+
+In = Intent("In")
+Out = Intent("Out")
+InOut = Intent("InOut")
+
+# Generics
+
+class TypeVar():
+    def __init__(self, name):
+        self._name = name
+
+    def __getitem__(self, params):
+        return Array(self, params)
+
+def restriction(func):
+    return func
+
+# Overloading support
+
+def ltype(x):
+    """
+    Converts CPython types to LPython types
+    """
+    if type(x) == int:
+        return i32, i64
+    elif type(x) == float:
+        return f32, f64
+    elif type(x) == complex:
+        return c32, c64
+    elif type(x) == str:
+        return (str, )
+    elif type(x) == bool:
+        return (bool, )
+    raise Exception("Unsupported Type: %s" % str(type(x)))
+
+class OverloadedFunction:
+    """
+    A wrapper class for allowing overloading.
+    """
+    global_map = {}
+
+    def __init__(self, func):
+        self.func_name = func.__name__
+        f_list = self.global_map.get(func.__name__, [])
+        f_list.append((func, getfullargspec(func)))
+        self.global_map[func.__name__] = f_list
+
+    def __call__(self, *args, **kwargs):
+        func_map_list = self.global_map.get(self.func_name, False)
+        if not func_map_list:
+            raise Exception("Function: %s is not defined" % self.func_name)
+        for item in func_map_list:
+            func, key = item
+            try:
+                # This might fail for the cases when arguments don't match
+                ann_dict = getcallargs(func, *args, **kwargs)
+            except TypeError:
+                continue
+            flag = True
+            for k, v in ann_dict.items():
+                if not key.annotations.get(k, False):
+                    flag = False
+                    break
+                else:
+                    if not (key.annotations.get(k) in ltype(v)):
+                        flag = False
+                        break
+            if flag:
+                return func(*args, **kwargs)
+        raise Exception(f"Function: {self.func_name} not found with matching "
+                        "signature")
+
+
+def overload(f):
+    overloaded_f = OverloadedFunction(f)
+    overloaded_f.__name__ = f.__name__
+    overloaded_f.__code__ = f.__code__
+    overloaded_f.__annotations__ = f.__annotations__
+    return overloaded_f
+
+# To be handled in ASR
+def vectorize(f):
+    return f
+
+# To be handled in backend
+def inline(f):
+    return f
+
+# To be handled in backend
+def static(f):
+    return f
+
+class PackedDataClass:
+    pass
+
+def packed(*args, aligned=None):
+    if len(args) == 1:
+        if not is_dataclass(args[0]):
+            raise TypeError("packed can only be applied over a dataclass.")
+        class PackedDataClassLocal(args[0], PackedDataClass):
+            class_to_pack = args[0]
+        return PackedDataClassLocal
+
+    def _packed(f):
+        if not is_dataclass(f):
+            raise TypeError("packed can only be applied over a dataclass.")
+        class PackedDataClassLocal(f, PackedDataClass):
+            class_to_pack = f
+        return PackedDataClassLocal
+    return _packed
+
+def interface(f):
+    def inner_func():
+        raise Exception("Unexpected to be called by CPython")
+    return inner_func
+
+
+# C interoperation support
+
+class c_complex(ctypes.Structure):
+    def __eq__(self, other):
+        if isinstance(other, complex):
+            return self.real == other.real and self.imag == other.imag
+        elif isinstance(other, (int, float)):
+            return self.real == other and self.imag == 0.0
+        return super().__eq__(other)
+
+    def __sub__(self, other):
+        import numpy as np
+        if isinstance(other, (complex, np.complex64, np.complex128)):
+            return complex(self.real - other.real, self.imag - other.imag)
+        elif isinstance(other, (int, float)):
+            return complex(self.real - other, self.imag)
+        raise NotImplementedError()
+
+class c_float_complex(c_complex):
+    _fields_ = [("real", ctypes.c_float), ("imag", ctypes.c_float)]
+
+class c_double_complex(c_complex):
+    _fields_ = [("real", ctypes.c_double), ("imag", ctypes.c_double)]
+
+def convert_type_to_ctype(arg):
+    from enum import Enum
+    if arg == f64:
+        return ctypes.c_double
+    elif arg == f32:
+        return ctypes.c_float
+    elif arg == i64:
+        return ctypes.c_int64
+    elif arg == i32:
+        return ctypes.c_int32
+    elif arg == i16:
+        return ctypes.c_int16
+    elif arg == i8:
+        return ctypes.c_int8
+    elif arg == u64:
+        return ctypes.c_uint64
+    elif arg == u32:
+        return ctypes.c_uint32
+    elif arg == u16:
+        return ctypes.c_uint16
+    elif arg == u8:
+        return ctypes.c_uint8
+    elif arg == CPtr:
+        return ctypes.c_void_p
+    elif arg == str:
+        return ctypes.c_char_p
+    elif arg == c32:
+        return c_float_complex
+    elif arg == c64:
+        return c_double_complex
+    elif arg == bool:
+        return ctypes.c_bool
+    elif arg == Callable:
+        return ctypes.PYFUNCTYPE(None)
+    elif arg is None:
+        raise NotImplementedError("Type cannot be None")
+    elif isinstance(arg, Array):
+        if is_dataclass(arg._type):
+            return arg
+        type = convert_type_to_ctype(arg._type)
+        return ctypes.POINTER(type)
+    elif is_dataclass(arg):
+        return convert_to_ctypes_Structure(arg)
+    elif issubclass(arg, Enum):
+        # TODO: store enum in ctypes.Structure with name and value as fields.
+        return ctypes.c_int64
+    else:
+        raise NotImplementedError("Type %r not implemented" % arg)
+
+def convert_numpy_dtype_to_ctype(arg):
+    import numpy as np
+    if arg == np.float64:
+        return ctypes.c_double
+    elif arg == np.float32:
+        return ctypes.c_float
+    elif arg == np.int64:
+        return ctypes.c_int64
+    elif arg == np.int32:
+        return ctypes.c_int32
+    elif arg == np.int16:
+        return ctypes.c_int16
+    elif arg == np.int8:
+        return ctypes.c_int8
+    elif arg == np.uint64:
+        return ctypes.c_uint64
+    elif arg == np.uint32:
+        return ctypes.c_uint32
+    elif arg == np.uint16:
+        return ctypes.c_uint16
+    elif arg == np.uint8:
+        return ctypes.c_uint8
+    elif arg == np.void:
+        return ctypes.c_void_p
+    elif arg is None:
+        raise NotImplementedError("Type cannot be None")
+    else:
+        raise NotImplementedError("Type %r not implemented" % arg)
+
+class CTypes:
+    """
+    A wrapper class for interfacing C via ctypes.
+    """
+
+    def __init__(self, f, py_mod = None, py_mod_path = None):
+        def get_rtlib_dir():
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            return os.path.join(current_dir, "..")
+        def get_lib_name(name):
+            if platform.system() == "Linux":
+                return "lib" + name + ".so"
+            elif platform.system() == "Darwin":
+                return "lib" + name + ".dylib"
+            elif platform.system() == "Windows":
+                return name + ".dll"
+            else:
+                raise NotImplementedError("Platform not implemented")
+        def get_crtlib_path():
+            nonlocal py_mod, py_mod_path
+            if py_mod is None:
+                py_mod = os.environ.get("LPYTHON_PY_MOD_NAME", "")
+            if py_mod == "":
+                return os.path.join(get_rtlib_dir(),
+                    get_lib_name("lpython_runtime"))
+            else:
+                if py_mod_path is None:
+                    py_mod_path = os.environ["LPYTHON_PY_MOD_PATH"]
+                return os.path.join(py_mod_path, get_lib_name(py_mod))
+        self.name = f.__name__
+        self.args = f.__code__.co_varnames
+        self.annotations = f.__annotations__
+        if ("LPYTHON_PY_MOD_NAME" in os.environ) or (py_mod is not None):
+            crtlib = get_crtlib_path()
+            self.library = ctypes.CDLL(crtlib)
+            self.cf = self.library[self.name]
+        else:
+            self.cf = CTypes.emulations[self.name]
+        argtypes = []
+        for arg in self.args:
+            arg_type = self.annotations[arg]
+            arg_ctype = convert_type_to_ctype(arg_type)
+            argtypes.append(arg_ctype)
+        self.cf.argtypes = argtypes
+        self.cf.restype = None
+        if "return" in self.annotations:
+            res_type = self.annotations["return"]
+            if res_type is not None:
+                self.cf.restype = convert_type_to_ctype(res_type)
+
+    def __call__(self, *args, **kwargs):
+        if len(kwargs) > 0:
+            raise Exception("kwargs are not supported")
+        new_args = []
+        for arg in args:
+            import numpy as np
+            if isinstance(arg, str):
+                new_args.append(arg.encode("utf-8"))
+            elif isinstance(arg, np.ndarray):
+                new_args.append(arg.ctypes.data_as(ctypes.POINTER(convert_numpy_dtype_to_ctype(arg.dtype))))
+            else:
+                new_args.append(arg)
+        res = self.cf(*new_args)
+        if self.cf.restype == ctypes.c_char_p:
+            res = res.decode("utf-8")
+        return res
+
+def convert_to_ctypes_Union(f):
+    fields = []
+    for name in f.__annotations__:
+        ltype_ = f.__annotations__[name]
+        fields.append((name, convert_type_to_ctype(ltype_)))
+    f._fields_ = fields
+    f.__annotations__ = {}
+
+    return f
+
+def get_fixed_size_of_array(ltype_: Array):
+    if isinstance(ltype_._dims, tuple):
+        size = 1
+        for dim in ltype_._dims:
+            if not isinstance(dim, int):
+                return None
+            size *= dim
+    elif isinstance(ltype_._dims, int):
+        return ltype_._dims
+    return None
+
+def convert_to_ctypes_Structure(f):
+    fields = []
+
+    pack_class = issubclass(f, PackedDataClass)
+    if pack_class:
+        f = f.class_to_pack
+
+    if not issubclass(f, ctypes.Structure):
+        for name in f.__annotations__:
+            ltype_ = f.__annotations__[name]
+            if isinstance(ltype_, Array):
+                array_size = get_fixed_size_of_array(ltype_)
+                if array_size is not None:
+                    ltype_ = ltype_._type
+                    fields.append((name, convert_type_to_ctype(ltype_) * array_size))
+                else:
+                    fields.append((name, convert_type_to_ctype(ltype_)))
+            else:
+                fields.append((name, convert_type_to_ctype(ltype_)))
+    else:
+        fields = f._fields_
+        pack_class = pack_class or f._pack_
+
+
+    class ctypes_Structure(ctypes.Structure):
+        _pack_ = int(pack_class)
+        _fields_ = fields
+
+        def __init__(self, *args):
+            if len(args) != 0 and len(args) != len(self._fields_):
+                super().__init__(*args)
+
+            for field, arg in zip(self._fields_, args):
+                from enum import Enum
+                member = self.__getattribute__(field[0])
+                value = arg
+                if isinstance(member, ctypes.Array):
+                    import numpy as np
+                    if isinstance(value, np.ndarray):
+                        if value.dtype == np.complex64:
+                            value = value.flatten().tolist()
+                            value = [c_float_complex(val.real, val.imag) for val in value]
+                        elif value.dtype == np.complex128:
+                            value = value.flatten().tolist()
+                            value = [c_double_complex(val.real, val.imag) for val in value]
+                        value = type(member)(*value)
+                elif isinstance(value, Enum):
+                    value = value.value
+                self.__setattr__(field[0], value)
+
+    ctypes_Structure.__name__ = f.__name__
+
+    return ctypes_Structure
+
+def ccall(f=None, header=None, c_shared_lib=None, c_shared_lib_path=None):
+    def wrap(func):
+        if not isclass(func) or not issubclass(func, Union):
+            func = CTypes(func, c_shared_lib, c_shared_lib_path)
+        return func
+    if f:
+        return wrap(f)
+    return wrap
+
+def pythoncall(*args, **kwargs):
+    def inner(fn):
+        import importlib
+        module = importlib.import_module(kwargs["module"])
+        fn_new = getattr(module, fn.__name__)
+        return fn_new
+    return inner
+
+def union(f):
+    fields = []
+    fa = {}
+    for name in f.__annotations__:
+        ltype_ = f.__annotations__[name]
+        ltype_ = convert_type_to_ctype(ltype_)
+        fa[name] = ltype_
+
+        fields.append((name, ltype_))
+
+    f._fields_ = fields
+    f.__annotations__ = fa
+    return f
+
+def pointer(x, type_=None):
+    if type_ is None:
+        type_ = type(x)
+    from numpy import ndarray
+    if isinstance(x, ndarray):
+        return x.ctypes.data_as(ctypes.POINTER(convert_numpy_dtype_to_ctype(x.dtype)))
+    else:
+        if type_ == i8:
+            return ctypes.cast(ctypes.pointer(ctypes.c_int8(x)),
+                    ctypes.c_void_p)
+        elif type_ == i16:
+            return ctypes.cast(ctypes.pointer(ctypes.c_int16(x)),
+                    ctypes.c_void_p)
+        elif type_ == i32:
+            return ctypes.cast(ctypes.pointer(ctypes.c_int32(x)),
+                    ctypes.c_void_p)
+        elif type_ == i64:
+            return ctypes.cast(ctypes.pointer(ctypes.c_int64(x)),
+                    ctypes.c_void_p)
+        elif type_ == u8:
+            return ctypes.cast(ctypes.pointer(ctypes.c_uint8(x)),
+                    ctypes.c_void_p)
+        elif type_ == u16:
+            return ctypes.cast(ctypes.pointer(ctypes.c_uint16(x)),
+                    ctypes.c_void_p)
+        elif type_ == u32:
+            return ctypes.cast(ctypes.pointer(ctypes.c_uint32(x)),
+                    ctypes.c_void_p)
+        elif type_ == u64:
+            return ctypes.cast(ctypes.pointer(ctypes.c_uint64(x)),
+                    ctypes.c_void_p)
+        elif type_ == f32:
+            return ctypes.cast(ctypes.pointer(ctypes.c_float(x)),
+                    ctypes.c_void_p)
+        elif type_ == f64:
+            return ctypes.cast(ctypes.pointer(ctypes.c_double(x)),
+                    ctypes.c_void_p)
+        elif is_dataclass(type_):
+            if issubclass(type_, ctypes.Structure):
+                return ctypes.cast(ctypes.pointer(x), ctypes.c_void_p)
+            else:
+                return x
+        else:
+            raise Exception("Type not supported in pointer()")
+
+class PointerToStruct:
+
+    def __init__(self, ctypes_ptr_):
+        self.__dict__["ctypes_ptr"] = ctypes_ptr_
+
+    def __getattr__(self, name: str):
+        if name == "ctypes_ptr":
+            return self.__dict__[name]
+        value = self.ctypes_ptr.contents.__getattribute__(name)
+        if isinstance(value, (c_float_complex, c_double_complex)):
+            value = complex(value.real, value.imag)
+        return value
+
+    def __setattr__(self, name: str, value):
+        name_ = self.ctypes_ptr.contents.__getattribute__(name)
+        from enum import Enum
+        if isinstance(name_, c_float_complex):
+            if isinstance(value, complex):
+                value = c_float_complex(value.real, value.imag)
+            else:
+                value = c_float_complex(value.real, 0.0)
+        elif isinstance(name_, c_double_complex):
+            if isinstance(value, complex):
+                value = c_double_complex(value.real, value.imag)
+            else:
+                value = c_double_complex(value.real, 0.0)
+        elif isinstance(name_, ctypes.Array):
+            import numpy as np
+            if isinstance(value, np.ndarray):
+                if value.dtype == np.complex64:
+                    value = value.flatten().tolist()
+                    value = [c_float_complex(val.real, val.imag) for val in value]
+                elif value.dtype == np.complex128:
+                    value = value.flatten().tolist()
+                    value = [c_double_complex(val.real, val.imag) for val in value]
+                value = type(name_)(*value)
+        elif isinstance(value, Enum):
+            value = value.value
+        self.ctypes_ptr.contents.__setattr__(name, value)
+
+def c_p_pointer(cptr, targettype, targetshape=None):
+    targettype_ptr = convert_type_to_ctype(targettype)
+    if isinstance(targettype, Array):
+        if targetshape is None:
+            raise ValueError("target shape must be "
+                             "provided if target type is an array.")
+        # TODO: Add support for multi-dimensional shape of target variable
+        if py_is_dataclass(targettype._type):
+            return ctypes.cast(cptr.value, ctypes.py_object).value
+        newa = ctypes.cast(cptr, targettype_ptr)
+        return newa
+    else:
+        if py_is_dataclass(targettype):
+            if cptr.value is None:
+                return None
+            return ctypes.cast(cptr, ctypes.py_object).value
+
+        targettype_ptr = ctypes.POINTER(targettype_ptr)
+        newa = ctypes.cast(cptr, targettype_ptr)
+        if is_ctypes_Structure(targettype):
+            # return after wrapping newa inside PointerToStruct
+            return PointerToStruct(newa)
+        return newa
+
+def p_c_pointer(ptr, cptr):
+    if isinstance(ptr, ctypes.c_void_p):
+        cptr.value = ptr.value
+    else:
+        # assign the address of ptr in memory to cptr.value
+        # the case for numpy arrays converted to a pointer
+        cptr.value = id(ptr)
+
+def empty_c_void_p():
+    class ctypes_c_void_p(ctypes.c_void_p):
+
+        def __eq__(self, value):
+            return self.value == value.value
+
+        def __repr__(self):
+            return str(self.value)
+
+    return ctypes_c_void_p()
+
+def cptr_to_u64(cptr):
+    return u64(ctypes.cast(cptr, ctypes.c_void_p).value)
+
+def u64_to_cptr(ivalue):
+    return ctypes.c_void_p(i64(ivalue))
+
+def sizeof(arg):
+    return ctypes.sizeof(convert_type_to_ctype(arg))
+
+def ccallable(f):
+    if py_is_dataclass(f):
+        return convert_to_ctypes_Structure(f)
+    return f
+
+def ccallback(f):
+    return f
+
+class LpythonJITCache:
+
+    def __init__(self):
+        self.pyfunc2compiledfunc = {}
+
+    def compile(self, function, backend, optimisation_flags):
+        if function in self.pyfunc2compiledfunc:
+            return self.pyfunc2compiledfunc[function]
+
+        if optimisation_flags is not None and backend is None:
+            raise ValueError("backend must be specified if backend_optimisation_flags are provided.")
+
+        if backend is None:
+            backend = "c"
+
+        def get_rtlib_dir():
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            return os.path.join(current_dir, "..")
+
+        fn_name = function.__name__
+        # Get the source code of the function
+        source_code = getsource(function)
+        source_code = source_code[source_code.find('\n'):]
+
+        dir_name = "./lpython_decorator_" + fn_name
+        if not os.path.exists(dir_name):
+            os.mkdir(dir_name)
+        filename = dir_name + "/" + fn_name
+
+        # Open the file for writing
+        with open(filename + ".py", "w") as file:
+            # Write the Python source code to the file
+            file.write("@pythoncallable")
+            file.write(source_code)
+
+        if backend != "c":
+            raise NotImplementedError("Backend %s is not supported with @lpython yet."%(backend))
+
+        opt_flags = " "
+        if optimisation_flags is not None:
+            for opt_flag in optimisation_flags:
+                opt_flags += opt_flag + " "
+
+        # ----------------------------------------------------------------------
+        # Generate the shared library
+        # TODO: Use LLVM instead of C backend
+        r = os.system("lpython --show-c --disable-main "
+            + filename + ".py > " + filename + ".c")
+        assert r == 0, "Failed to create C file"
+
+        gcc_flags = ""
+        if platform.system() == "Linux":
+            gcc_flags = " -shared -fPIC"
+        elif platform.system() == "Darwin":
+            gcc_flags = " -bundle -flat_namespace -undefined suppress"
+        else:
+            raise NotImplementedError("Platform not implemented")
+
+        gcc_flags += opt_flags
+
+        from numpy import get_include
+        from distutils.sysconfig import get_python_inc, get_python_lib, \
+            get_python_version
+        python_path = "-I" + get_python_inc() + " "
+        numpy_path = "-I" + get_include() + " "
+        rt_path_01 = "-I" + get_rtlib_dir() + "/../libasr/runtime "
+        rt_path_02 = "-L" + get_rtlib_dir() + " -Wl,-rpath," \
+            + get_rtlib_dir() + " -llpython_runtime "
+        python_lib = "-L" + get_python_lib() + "/../.." + f" -Wl,-rpath,{get_python_lib()+'/../..'}" + " -lpython" + \
+            get_python_version() + " -lm"
+
+        # ----------------------------------------------------------------------
+        # Compile the C file and create a shared library
+        shared_library_name = "lpython_module_" + fn_name
+        r = os.system("gcc -g" +  gcc_flags + python_path + numpy_path +
+            filename + ".c -o " + shared_library_name + ".so " +
+            rt_path_01 + rt_path_02 + python_lib)
+        assert r == 0, "Failed to create the shared library"
+        self.pyfunc2compiledfunc[function] = (shared_library_name, fn_name)
+        return self.pyfunc2compiledfunc[function]
+
+lpython_jit_cache = LpythonJITCache()
+
+# Taken from https://stackoverflow.com/a/24617244
+def lpython(original_function=None, backend=None, backend_optimisation_flags=None):
+    """
+    The @lpython decorator compiles a given function using LPython.
+
+    The decorator should be used from CPython mode, i.e., when the module is
+    being run using CPython. When possible, it is recommended to use LPython
+    for the main program, and use the @cpython decorator from the LPython mode
+    to access CPython features that are not supported by LPython.
+    """
+    def _lpython(function):
+        @functools.wraps(function)
+        def __lpython(*args, **kwargs):
+            import sys; sys.path.append('.')
+            lib_name, fn_name = lpython_jit_cache.compile(
+                function, backend, backend_optimisation_flags)
+            return getattr(__import__(lib_name), fn_name)(*args, **kwargs)
+        return __lpython
+
+    if original_function:
+        return _lpython(original_function)
+    return _lpython
+
+def bitnot(x, bitsize):
+    return (~x) % (2 ** bitsize)
+
+def reserve(data_structure, n):
+    if isinstance(data_structure, list):
+        data_structure = [None] * n
+    # no-op
+
+bitnot_u8 = lambda x: bitnot(x, 8)
+bitnot_u16 = lambda x: bitnot(x, 16)
+bitnot_u32 = lambda x: bitnot(x, 32)
+bitnot_u64 = lambda x: bitnot(x, 64)
+from lpython import (i8, i16, i32, i64, f32, f64, c32, c64, overload, u8,
+                     u16, u32, u64)
+#from sys import exit
+
+#: abs() as a generic procedure.
+#: supported types for argument:
+#: i8, i16, i32, i64, f32, f64, bool, c32, c64
+@overload
+def abs(x: f64) -> f64:
+    """
+    Return the absolute value of `x`.
+    """
+    result: f64
+    if x >= 0.0:
+        result = x
+    else:
+        result = -x
+    return result
+
+@overload
+def abs(x: f32) -> f32:
+    if x >= f32(0.0):
+        return x
+    else:
+        return -x
+
+@overload
+def abs(x: i8) -> i8:
+    if x >= i8(0):
+        return x
+    else:
+        return -x
+
+@overload
+def abs(x: i16) -> i16:
+    if x >= i16(0):
+        return x
+    else:
+        return -x
+
+@overload
+def abs(x: i32) -> i32:
+    if x >= 0:
+        return x
+    else:
+        return -x
+
+@overload
+def abs(x: i64) -> i64:
+    if x >= i64(0):
+        return x
+    else:
+        return -x
+
+@overload
+def abs(b: bool) -> i32:
+    if b:
+        return 1
+    else:
+        return 0
+
+@overload
+def abs(c: c32) -> f32:
+    a: f32
+    b: f32
+    a = c.real
+    b = _lfortran_caimag(c)
+    return f32((a**f32(2) + b**f32(2))**f32(1/2))
+
+@overload
+def abs(c: c64) -> f64:
+    a: f64
+    b: f64
+    a = c.real
+    b = _lfortran_zaimag(c)
+    return (a**2.0 + b**2.0)**(1/2)
+
+@interface
+def len(s: str) -> i32:
+    """
+    Return the length of the string `s`.
+    """
+    pass
+
+#: pow() as a generic procedure.
+#: supported types for arguments:
+#: (i32, i32), (i64, i64), (f64, f64),
+#: (f32, f32), (i32, f64), (f64, i32),
+#: (i32, f32), (f32, i32), (bool, bool), (c32, i32)
+@overload
+def pow(x: i32, y: i32) -> f64:
+    """
+    Returns x**y.
+    """
+    return f64(x**y)
+
+@overload
+def pow(x: i64, y: i64) -> f64:
+    return f64(x**y)
+
+@overload
+def pow(x: f32, y: f32) -> f32:
+    return x**y
+
+@overload
+def pow(x: f64, y: f64) -> f64:
+    """
+    Returns x**y.
+    """
+    return x**y
+
+@overload
+def pow(x: i32, y: f32) -> f32:
+    return f32(x)**y
+
+@overload
+def pow(x: f32, y: i32) -> f32:
+    return x**f32(y)
+
+@overload
+def pow(x: i32, y: f64) -> f64:
+    return f64(x)**y
+
+@overload
+def pow(x: f64, y: i32) -> f64:
+    return x**f64(y)
+
+@overload
+def pow(x: bool, y: bool) -> i32:
+    if y and not x:
+        return 0
+
+    return 1
+
+@overload
+def pow(c: c32, y: i32) -> c32:
+    return c**c32(y)
+
+# sum
+# supported data types: i32, i64, f32, f64
+
+@overload
+def sum(arr: list[i32]) -> i32:
+    """
+    Sum of the elements of `arr`.
+    """
+    sum: i32
+    sum = 0
+
+    i: i32
+    for i in range(len(arr)):
+        sum += arr[i]
+    return sum
+
+@overload
+def sum(arr: list[i64]) -> i64:
+    """
+    Sum of the elements of `arr`.
+    """
+    sum: i64
+    sum = i64(0)
+
+    i: i32
+    for i in range(len(arr)):
+        sum += arr[i]
+    return sum
+
+@overload
+def sum(arr: list[f32]) -> f32:
+    """
+    Sum of the elements of `arr`.
+    """
+    sum: f32
+    sum = f32(0.0)
+
+    i: i32
+    for i in range(len(arr)):
+        sum += arr[i]
+    return sum
+
+@overload
+def sum(arr: list[f64]) -> f64:
+    """
+    Sum of the elements of `arr`.
+    """
+    sum: f64
+    sum = 0.0
+
+    i: i32
+    for i in range(len(arr)):
+        sum += arr[i]
+    return sum
+
+def bin(n: i32) -> str:
+    """
+    Returns the binary representation of an integer `n`.
+    """
+    if n == 0:
+        return '0b0'
+    prep: str
+    prep = '0b'
+    n_: i32
+    n_ = n
+    if n_ < 0:
+        n_ = -n_
+        prep = '-0b'
+    res: str
+    res = ''
+    if (n_ - _lpython_floordiv(n_, 2)*2) == 0:
+        res += '0'
+    else:
+        res += '1'
+    while n_ > 1:
+        n_ = _lpython_floordiv(n_, 2)
+        if (n_ - _lpython_floordiv(n_, 2)*2) == 0:
+            res += '0'
+        else:
+            res += '1'
+    return prep + res[::-1]
+
+
+def hex(n: i32) -> str:
+    """
+    Returns the hexadecimal representation of an integer `n`.
+    """
+    hex_values: list[str]
+    hex_values = ['0', '1', '2', '3', '4', '5', '6', '7',
+                  '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+    if n == 0:
+        return '0x0'
+    prep: str
+    prep = '0x'
+    n_: i32
+    n_ = n
+    if n_ < 0:
+        prep = '-0x'
+        n_ = -n_
+    res: str
+    res = ""
+    remainder: i32
+    while n_ > 0:
+        remainder = n_ - _lpython_floordiv(n_, 16)*16
+        n_ -= remainder
+        n_ = _lpython_floordiv(n_, 16)
+        res += hex_values[remainder]
+    return prep + res[::-1]
+
+
+def oct(n: i32) -> str:
+    """
+    Returns the octal representation of an integer `n`.
+    """
+    _values: list[str]
+    _values = ['0', '1', '2', '3', '4', '5', '6', '7',
+               '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+    if n == 0:
+        return '0o0'
+    prep: str
+    prep = '0o'
+    n_: i32
+    n_ = n
+    if n_ < 0:
+        prep = '-0o'
+        n_ = -n_
+    res: str
+    res = ""
+    remainder: i32
+    while n_ > 0:
+        remainder = n_ - _lpython_floordiv(n_, 8)*8
+        n_ -= remainder
+        n_ = _lpython_floordiv(n_, 8)
+        res += _values[remainder]
+    return prep + res[::-1]
+
+#: round() as a generic procedure.
+#: supported types for argument:
+#: i8, i16, i32, i64, f32, f64, bool
+@overload
+def round(value: f64) -> i32:
+    """
+    Rounds a floating point number to the nearest integer.
+    """
+    i: i32
+    i = i32(value)
+    f: f64
+    f = abs(value - f64(i))
+    if f < 0.5:
+        return i
+    elif f > 0.5:
+        return i + 1
+    else:
+        if i - _lpython_floordiv(i, 2) * 2 == 0:
+            return i
+        else:
+            return i + 1
+
+@overload
+def round(value: f32) -> i32:
+    i: i32
+    i = i32(value)
+    f: f64
+    f = f64(abs(value - f32(i)))
+    if f < 0.5:
+        return i
+    elif f > 0.5:
+        return i + 1
+    else:
+        if i - _lpython_floordiv(i, 2) * 2 == 0:
+            return i
+        else:
+            return i + 1
+
+@overload
+def round(value: i32) -> i32:
+    return value
+
+@overload
+def round(value: i64) -> i64:
+    return value
+
+@overload
+def round(value: i8) -> i8:
+    return value
+
+@overload
+def round(value: i16) -> i16:
+    return value
+
+@overload
+def round(b: bool) -> i32:
+    return abs(b)
+
+#: complex() as a generic procedure.
+#: supported types for arguments:
+#: (f64, f64), (f32, f64), (f64, f32), (f32, f32),
+#: (i32, i32), (i64, i64), (i32, i64), (i64, i32)
+
+
+@interface
+@overload
+def complex() -> c64:
+    return c64(0) + c64(0)*1j
+
+
+@interface
+@overload
+def complex(x: f64) -> c64:
+    return c64(x) + c64(0)*1j
+
+@interface
+@overload
+def complex(x: i32) -> c32:
+    return c32(x) + c32(0)*c32(1j)
+
+@interface
+@overload
+def complex(x: f32) -> c32:
+    return c32(x) + c32(0)*c32(1j)
+
+@interface
+@overload
+def complex(x: i64) -> c64:
+    return c64(x) + c64(0)*1j
+
+@interface
+@overload
+def complex(x: f64, y: f64) -> c64:
+    """
+    Return a complex number with the given real and imaginary parts.
+    """
+    return c64(x) + c64(y)*1j
+
+@interface
+@overload
+def complex(x: f32, y: f32) -> c32:
+    return c32(x) + c32(y)*c32(1j)
+
+@interface
+@overload
+def complex(x: f32, y: f64) -> c64:
+    return c64(x) + c64(y)*1j
+
+@interface
+@overload
+def complex(x: f64, y: f32) -> c64:
+    return c64(x) + c64(y)*1j
+
+@interface
+@overload
+def complex(x: i32, y: i32) -> c64:
+    return c64(x) + c64(y)*1j
+
+@interface
+@overload
+def complex(x: i64, y: i64) -> c64:
+    return c64(x) + c64(y)*1j
+
+@interface
+@overload
+def complex(x: i32, y: i64) -> c64:
+    return c64(x) + c64(y)*1j
+
+@interface
+@overload
+def complex(x: i64, y: i32) -> c64:
+    return c64(x) + c64(y)*1j
+
+@interface
+@overload
+def complex(x: i32, y: f64) -> c64:
+    return c64(x) + c64(y)*1j
+
+@interface
+@overload
+def complex(x: f64, y: i32) -> c64:
+    return c64(x) + c64(y)*1j
+
+@interface
+def divmod(x: i32, y: i32) -> tuple[i32, i32]:
+    """
+    Return the tuple (x//y, x%y).
+    """
+    if y == 0:
+        raise ZeroDivisionError("Integer division or modulo by zero not possible")
+    t: tuple[i32, i32]
+    t = (_lpython_floordiv(x, y), _mod(x, y))
+    return t
+
+
+def lbound(x: i32[:], dim: i32) -> i32:
+    pass
+
+
+def ubound(x: i32[:], dim: i32) -> i32:
+    pass
+
+
+@ccall
+def _lfortran_caimag(x: c32) -> f32:
+    pass
+
+@ccall
+def _lfortran_zaimag(x: c64) -> f64:
+    pass
+
+@overload
+def _lpython_imag(x: c64) -> f64:
+    return _lfortran_zaimag(x)
+
+@overload
+def _lpython_imag(x: c32) -> f32:
+    return _lfortran_caimag(x)
+
+
+@overload
+def _lpython_floordiv(a: f64, b: f64) -> f64:
+    r: f64
+    r = a/b
+    result: i64
+    result = int(r)
+    if r >= 0.0 or f64(result) == r:
+        return float(result)
+    return float(result - i64(1))
+
+
+@overload
+def _lpython_floordiv(a: f32, b: f32) -> f32:
+    r: f64
+    r = float(a)/float(b)
+    result: i32
+    resultf32: f32
+    result = i32(r)
+    if r >= 0.0 or f64(result) == r:
+        resultf32 = f32(1.0) * f32(result)
+    else:
+        resultf32 = f32(1.0) * f32(result) - f32(1.0)
+    return resultf32
+
+@overload
+def _lpython_floordiv(a: i8, b: i8) -> i8:
+    r: f64 # f32 rounds things up and gives incorrect results
+    r = float(a)/float(b)
+    result: i8
+    result = i8(r)
+    if r >= 0.0 or f64(result) == r:
+        return result
+    return result - i8(1)
+
+@overload
+def _lpython_floordiv(a: u8, b: u8) -> u8:
+    return u8(_lpython_floordiv(i8(a), i8(b)))
+
+@overload
+def _lpython_floordiv(a: i16, b: i16) -> i16:
+    r: f64 # f32 rounds things up and gives incorrect results
+    r = float(a)/float(b)
+    result: i16
+    result = i16(r)
+    if r >= 0.0 or f64(result) == r:
+        return result
+    return result - i16(1)
+
+@overload
+def _lpython_floordiv(a: u16, b: u16) -> u16:
+    return u16(_lpython_floordiv(i16(a), i16(b)))
+
+@overload
+def _lpython_floordiv(a: i32, b: i32) -> i32:
+    r: f64 # f32 rounds things up and gives incorrect results
+    r = float(a)/float(b)
+    result: i32
+    result = i32(r)
+    if r >= 0.0 or f64(result) == r:
+        return result
+    return result - 1
+
+@overload
+def _lpython_floordiv(a: u32, b: u32) -> u32:
+    return u32(_lpython_floordiv(i32(a), i32(b)))
+
+@overload
+def _lpython_floordiv(a: i64, b: i64) -> i64:
+    r: f64
+    r = a/b
+    result: i64
+    result = int(r)
+    if r >= 0.0 or f64(result) == r:
+        return result
+    return result - i64(1)
+
+@overload
+def _lpython_floordiv(a: u64, b: u64) -> u64:
+    return u64(_lpython_floordiv(i64(a), i64(b)))
+
+@overload
+def _lpython_floordiv(a: bool, b: bool) -> bool:
+    if b == False:
+        raise ValueError('Denominator cannot be False or 0.')
+    return a
+
+
+@overload
+def _mod(a: i8, b: i8) -> i8:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: i16, b: i16) -> i16:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: i32, b: i32) -> i32:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: u8, b: u8) -> u8:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: u16, b: u16) -> u16:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: u32, b: u32) -> u32:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: f32, b: f32) -> f32:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: u64, b: u64) -> u64:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: i64, b: i64) -> i64:
+    return a - _lpython_floordiv(a, b)*b
+
+@overload
+def _mod(a: f64, b: f64) -> f64:
+    return a - _lpython_floordiv(a, b)*b
+
+
+@overload
+def max(a: i32, b: i32) -> i32:
+    if a > b:
+        return a
+    else:
+        return b
+
+@overload
+def max(a: i32, b: i32, c: i32) -> i32:
+    res: i32 = a
+    if b > res:
+        res = b
+    if c > res:
+        res = c
+    return res
+
+@overload
+def max(a: f64, b: f64, c: f64) -> f64:
+    res: f64 =a
+    if b - res > 1e-6:
+        res = b
+    if c - res > 1e-6:
+        res = c
+    return res
+
+@overload
+def max(a: f64, b: f64) -> f64:
+    if a - b > 1e-6:
+        return a
+    else:
+        return b
+
+@overload
+def min(a: i32, b: i32) -> i32:
+    if a < b:
+        return a
+    else:
+        return b
+
+@overload
+def min(a: i32, b: i32, c: i32) -> i32:
+    res: i32 = a
+    if b < res:
+        res = b
+    if c < res:
+        res = c
+    return res
+
+@overload
+def min(a: f64, b: f64, c: f64) -> f64:
+    res: f64 = a
+    if res - b > 1e-6:
+        res = b
+    if res - c > 1e-6:
+        res = c
+    return res
+
+@overload
+def min(a: f64, b: f64) -> f64:
+    if b - a > 1e-6:
+        return a
+    else:
+        return b
+
+
+@overload
+def _floor(x: f64) -> i64:
+    r: i64
+    r = int(x)
+    if x >= f64(0) or x == f64(r):
+        return r
+    return r - i64(1)
+
+@overload
+def _floor(x: f32) -> i32:
+    r: i32
+    r = i32(x)
+    if x >= f32(0) or x == f32(r):
+        return r
+    return r - 1
+
+
+@overload
+def _mod(a: i32, b: i32) -> i32:
+    """
+    Returns a%b
+    """
+    return a - i32(_floor(a/b))*b
+
+
+@overload
+def _mod(a: i64, b: i64) -> i64:
+    """
+    Returns a%b
+    """
+    r: i64
+    r = _floor(a/b)
+    return a - r*b
+
+
+@overload
+def pow(x: i32, y: i32, z: i32) -> i32:
+    """
+    Return `x` raised to the power `y`.
+    """
+    if y < 0:
+        raise ValueError('y should be nonnegative')
+    result: i32
+    result = _mod(x**y, z)
+    return result
+
+
+@overload
+def pow(x: i64, y: i64, z: i64) -> i64:
+    """
+    Return `x` raised to the power `y`.
+    """
+    if y < i64(0):
+        raise ValueError('y should be nonnegative')
+    result: i64
+    result = _mod(x**y, z)
+    return result
+
+@overload
+def _lpython_str_capitalize(x: str) -> str:
+    if len(x) == 0:
+        return x
+    i:str
+    res:str = ""
+    for i in x:
+        if ord(i) >= 65 and ord(i) <= 90:  # Check if uppercase
+            res += chr(ord(i) + 32)  # Convert to lowercase using ASCII values
+        else:
+            res += i
+
+    val: i32
+    val = ord(res[0])
+    if val >= ord('a') and val <= ord('z'):
+        val -= 32
+    res = chr(val) + res[1:]
+    return res
+
+@overload
+def _lpython_str_lower(x: str) -> str:
+    res: str
+    res = ""
+    i:str
+    for i in x:
+        if ord('A') <= ord(i) and ord(i) <= ord('Z'):
+            res += chr(ord(i) +32)
+        else:
+            res += i
+    return res
+
+@overload
+def _lpython_str_upper(x: str) -> str:
+    res: str
+    res = ""
+    i:str
+    for i in x:
+        if ord('a') <= ord(i) and ord(i) <= ord('z'):
+            res += chr(ord(i) -32)
+        else:
+            res += i
+    return res
+
+
+@overload
+def _lpython_str_find(s: str, sub: str) -> i32:
+    s_len :i32; sub_len :i32; flag: bool; _len: i32;
+    res: i32; i: i32;
+    lps: list[i32] = []
+    s_len = len(s)
+    sub_len = len(sub)
+    flag = False
+    res = -1
+    if s_len == 0 or sub_len == 0:
+        return 0 if sub_len == 0 or (sub_len == s_len) else -1
+
+    for i in range(sub_len):
+        lps.append(0)
+
+    i = 1
+    _len = 0
+    while i < sub_len:
+        if sub[i] == sub[_len]:
+            _len += 1
+            lps[i] = _len
+            i += 1
+        else:
+            if _len != 0:
+                _len = lps[_len - 1]
+            else:
+                lps[i] = 0
+                i += 1
+
+    j: i32
+    j = 0
+    i = 0
+    while (s_len - i) >= (sub_len - j) and not flag:
+        if sub[j] == s[i]:
+            i += 1
+            j += 1
+        if j == sub_len:
+            res = i- j
+            flag = True
+            j = lps[j - 1]
+        elif i < s_len and sub[j] != s[i]:
+            if j != 0:
+                j = lps[j - 1]
+            else:
+                i = i + 1
+
+    return res
+
+def _lpython_str_rstrip(x: str) -> str:
+    ind: i32
+    ind = len(x) - 1
+    while ind >= 0 and x[ind] == ' ':
+        ind -= 1
+    return x[0: ind + 1]
+
+@overload
+def _lpython_str_lstrip(x: str) -> str:
+    ind :i32
+    ind = 0
+    while ind < len(x) and x[ind] == ' ':
+        ind += 1
+    return x[ind :len(x)]
+
+@overload
+def _lpython_str_strip(x: str) -> str:
+    res :str
+    res = _lpython_str_lstrip(x)
+    res = _lpython_str_rstrip(res)
+    return res
+
+@overload
+def _lpython_str_swapcase(s: str) -> str:
+    res :str = ""
+    cur: str
+    for cur in s:
+        if ord(cur) >= ord('a') and ord(cur) <= ord('z'):
+            res += chr(ord(cur) - ord('a') + ord('A'))
+        elif ord(cur) >= ord('A') and ord(cur) <= ord('Z'):
+            res += chr(ord(cur) - ord('A') + ord('a'))
+        else:
+            res += cur
+    return res
+
+@overload
+def _lpython_str_startswith(s: str ,sub: str) -> bool:
+    res :bool
+    res = not (len(s) == 0 and len(sub) > 0)
+    i: i32; j: i32
+    i = 0; j = 0
+    while (i < len(s)) and ((j < len(sub)) and res):
+        res = res and (s[i] == sub[j])
+        i += 1; j+=1
+    if res:
+        res = res and (j == len(sub))
+    return res
+
+@overload
+def _lpython_str_endswith(s: str, suffix: str) -> bool:
+
+    if(len(suffix) > len(s)):
+        return False
+
+    i : i32
+    i = 0
+    while(i < len(suffix)):
+        if(suffix[len(suffix) - i - 1] != s[len(s) - i - 1]):
+            return False
+        i += 1
+
+    return True
+
+@overload
+def _lpython_str_partition(s:str, sep: str) -> tuple[str, str, str]:
+    """
+    Returns a 3-tuple splitted around seperator
+    """
+    if len(s) == 0:
+        raise ValueError('empty string cannot be partitioned')
+    if len(sep) == 0:
+        raise ValueError('empty seperator')
+    res : tuple[str, str, str]
+    ind : i32
+    ind = _lpython_str_find(s, sep)
+    if ind == -1:
+        res = (s, "", "")
+    else:
+        res = (s[0:ind], sep, s[ind+len(sep): len(s)])
+    return res
+
+@overload
+def _lpython_str_islower(s: str) -> bool:
+    is_cased_present: bool
+    is_cased_present = False
+    i:str
+    for i in s:
+        if (ord(i) >= 97 and ord(i) <= 122) or (ord(i) >= 65 and ord(i) <= 90): # Implies it is a cased letter
+            is_cased_present = True
+            if not(ord(i) >= 97 and ord(i) <= 122): # Not lowercase
+                return False
+    return is_cased_present
+
+@overload
+def _lpython_str_isupper(s: str) -> bool:
+    is_cased_present: bool
+    is_cased_present = False
+    i:str
+    for i in s:
+        if (ord(i) >= 97 and ord(i) <= 122) or (ord(i) >= 65 and ord(i) <= 90): # Implies it is a cased letter
+            is_cased_present = True
+            if not(ord(i) >= 65 and ord(i) <= 90): # Not lowercase
+                return False
+    return is_cased_present
+
+@overload
+def _lpython_str_isdecimal(s: str) -> bool:
+    if len(s) == 0:
+        return False
+    i:str
+    for i in s:
+        if (ord(i) < 48 or ord(i) > 57): # Implies it is not a digit
+            return False
+    return True
+
+@overload
+def _lpython_str_isascii(s: str) -> bool:
+    if(len(s) == 0):
+        return True
+    i: str
+    for i in s:
+        if ord(i) < 0 or ord(i) > 127:
+            return False
+    return True
+
+def list(s: str) -> list[str]:
+    l: list[str] = []
+    i: i32
+    if len(s) == 0:
+        return l
+    for i in range(len(s)):
+        l.append(s[i])
+    return l
+from lpython import i32, i64, f64, f32, ccall, vectorize, overload
+
+########## sin ##########
+
+@ccall
+def _lfortran_dsin(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def sin(x: f64) -> f64:
+    return _lfortran_dsin(x)
+
+@ccall
+def _lfortran_ssin(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def sin(x: f32) -> f32:
+    return _lfortran_ssin(x)
+
+########## cos ##########
+
+@ccall
+def _lfortran_dcos(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def cos(x: f64) -> f64:
+    return _lfortran_dcos(x)
+
+@ccall
+def _lfortran_scos(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def cos(x: f32) -> f32:
+    return _lfortran_scos(x)
+
+########## sqrt ##########
+
+@overload
+@vectorize
+def sqrt(x: f64) -> f64:
+    return x**(1/2)
+
+@overload
+@vectorize
+def sqrt(x: f32) -> f32:
+    return x**f32(1/2)
+
+########## tan ##########
+
+@ccall
+def _lfortran_dtan(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def tan(x: f64) -> f64:
+    return _lfortran_dtan(x)
+
+@ccall
+def _lfortran_stan(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def tan(x: f32) -> f32:
+    return _lfortran_stan(x)
+
+
+########## sinh ##########
+
+@ccall
+def _lfortran_dsinh(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def sinh(x: f64) -> f64:
+    return _lfortran_dsinh(x)
+
+@ccall
+def _lfortran_ssinh(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def sinh(x: f32) -> f32:
+    return _lfortran_ssinh(x)
+
+########## cosh ##########
+
+@ccall
+def _lfortran_dcosh(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def cosh(x: f64) -> f64:
+    return _lfortran_dcosh(x)
+
+@ccall
+def _lfortran_scosh(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def cosh(x: f32) -> f32:
+    return _lfortran_scosh(x)
+
+
+########## log ##########
+
+@ccall
+def _lfortran_dlog(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def log(x: f64) -> f64:
+    return _lfortran_dlog(x)
+
+@ccall
+def _lfortran_slog(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def log(x: f32) -> f32:
+    return _lfortran_slog(x)
+
+########## log10 ##########
+
+@ccall
+def _lfortran_dlog10(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def log10(x: f64) -> f64:
+    return _lfortran_dlog10(x)
+
+@ccall
+def _lfortran_slog10(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def log10(x: f32) -> f32:
+    return _lfortran_slog10(x)
+
+########## log2 ##########
+
+@overload
+@vectorize
+def log2(x: f64) -> f64:
+    return _lfortran_dlog(x)/_lfortran_dlog(2.0)
+
+@overload
+@vectorize
+def log2(x: f32) -> f32:
+    return f32(_lfortran_slog(x)/_lfortran_slog(f32(2.0)))
+
+########## arcsin ##########
+
+@ccall
+def _lfortran_dasin(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def arcsin(x: f64) -> f64:
+    return _lfortran_dasin(x)
+
+@ccall
+def _lfortran_sasin(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def arcsin(x: f32) -> f32:
+    return _lfortran_sasin(x)
+
+########## arccos ##########
+
+@ccall
+def _lfortran_dacos(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def arccos(x: f64) -> f64:
+    return _lfortran_dacos(x)
+
+@ccall
+def _lfortran_sacos(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def arccos(x: f32) -> f32:
+    return _lfortran_sacos(x)
+
+########## tanh ##########
+
+@ccall
+def _lfortran_dtanh(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def tanh(x: f64) -> f64:
+    return _lfortran_dtanh(x)
+
+@ccall
+def _lfortran_stanh(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def tanh(x: f32) -> f32:
+    return _lfortran_stanh(x)
+
+########## exp ##########
+
+@ccall
+def _lfortran_dexp(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def exp(x: f64) -> f64:
+    return _lfortran_dexp(x)
+
+@ccall
+def _lfortran_sexp(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def exp(x: f32) -> f32:
+    return _lfortran_sexp(x)
+
+########## arctan ##########
+
+@ccall
+def _lfortran_datan(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def arctan(x: f64) -> f64:
+    return _lfortran_datan(x)
+
+@ccall
+def _lfortran_satan(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def arctan(x: f32) -> f32:
+    return _lfortran_satan(x)
+
+########## degrees ##########
+
+@overload
+@vectorize
+def degrees(x: f64) -> f64:
+    pi_64: Const[f64] = f64(3.141592653589793238462643383279502884197)
+    return x*180.0/pi_64
+
+@overload
+@vectorize
+def degrees(x: f32) -> f32:
+    pi_32: Const[f32] = f32(3.141592653589793238462643383279502884197)
+    return x*f32(f32(180)/pi_32)
+
+########## radians ##########
+
+@overload
+@vectorize
+def radians(x: f64) -> f64:
+    pi_64: Const[f64] = f64(3.141592653589793238462643383279502884197)
+    return x*pi_64/180.0
+
+@overload
+@vectorize
+def radians(x: f32) -> f32:
+    pi_32: Const[f32] = f32(3.141592653589793238462643383279502884197)
+    return x*f32(pi_32/f32(180))
+
+########## arcsinh ##########
+
+@ccall
+def _lfortran_dasinh(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def arcsinh(x: f64) -> f64:
+    return _lfortran_dasinh(x)
+
+@ccall
+def _lfortran_sasinh(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def arcsinh(x: f32) -> f32:
+    return _lfortran_sasinh(x)
+
+########## arccosh ##########
+
+@ccall
+def _lfortran_dacosh(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def arccosh(x: f64) -> f64:
+    return _lfortran_dacosh(x)
+
+@ccall
+def _lfortran_sacosh(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def arccosh(x: f32) -> f32:
+    return _lfortran_sacosh(x)
+
+########## arctanh ##########
+
+@ccall
+def _lfortran_datanh(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def arctanh(x: f64) -> f64:
+    return _lfortran_datanh(x)
+
+@ccall
+def _lfortran_satanh(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def arctanh(x: f32) -> f32:
+    return _lfortran_satanh(x)
+
+########## mod ##########
+
+@overload
+@vectorize
+def mod(x1: i64, x2: i64) -> i64:
+    if x2 == i64(0):
+        return int(0)
+    return x1 % x2
+
+@overload
+@vectorize
+def mod(x1: i32, x2: i32) -> i32:
+    if x2 == 0:
+        return 0
+    return x1 % x2
+
+
+########## floor ##########
+
+@overload
+@vectorize
+def floor(x: f64) -> f64:
+    result: i64
+    result = int(x)
+    if x >= f64(0) or x == f64(result):
+        return float(result)
+    return float(result - i64(1))
+
+@overload
+@vectorize
+def floor(x: f32) -> f32:
+    resultf: f32 = f32(i32(x))
+    if x >= f32(0) or x == resultf:
+        return resultf
+    return resultf - f32(1)
+
+
+########## ceil ##########
+
+
+@overload
+@vectorize
+def ceil(x: f64) -> f64:
+    result: i64
+    result = int(x)
+    if x <= f64(0) or x == f64(result):
+        return float(result)
+    return float(result + i64(1))
+
+@overload
+@vectorize
+def ceil(x: f32) -> f32:
+    resultf: f32 = f32(i32(x))
+    if x <= f32(0) or x == resultf:
+        return resultf
+    return resultf + f32(1)
+
+########## trunc ##########
+
+@ccall
+def _lfortran_dtrunc(x: f64) -> f64:
+    pass
+
+@overload
+@vectorize
+def trunc(x: f64) -> f64:
+    return _lfortran_dtrunc(x)
+
+@ccall
+def _lfortran_strunc(x: f32) -> f32:
+    pass
+
+@overload
+@vectorize
+def trunc(x: f32) -> f32:
+    return _lfortran_strunc(x)
+import sys
+import python_ast
+import ast
+
+filename = sys.argv[1]
+filename_out = sys.argv[2]
+
+input = open(filename).read()
+a = ast.parse(input, type_comments=True)
+#print(ast.unparse(a))
+#print()
+#print(ast.dump(a))
+
+# Transform ast.AST to python_ast.AST:
+
+def get_newlines(s):
+    newlines = []
+    for pos in range(len(s)):
+        if s[pos] == "\n":
+            newlines.append(pos)
+    return newlines
+
+newlines = get_newlines(input)
+
+# line and col starts from 1
+# It returns a linear position, which starts from 0
+def linecol_to_pos(line, col, newlines):
+    if line <= 0:
+        return 0
+    elif line == 1:
+        return col - 1
+    elif line-1 >= len(newlines):
+        return newlines[-1] + 1 + col - 1
+    else:
+        return newlines[line-2] + 1 + col - 1
+
+class Transform(ast.NodeVisitor):
+
+    # Transform Constant to specific Constant* types
+    def visit_Constant(self, node):
+        if isinstance(node.value, str):
+            new_node = python_ast.ConstantStr(node.value, node.kind)
+        elif isinstance(node.value, bool):
+            new_node = python_ast.ConstantBool(node.value, node.kind)
+        elif isinstance(node.value, int):
+            new_node = python_ast.ConstantInt(node.value, node.kind)
+        elif isinstance(node.value, float):
+            new_node = python_ast.ConstantFloat(node.value, node.kind)
+        elif isinstance(node.value, complex):
+            new_node = python_ast.ConstantComplex(node.value.real,
+                        node.value.imag, node.kind)
+        elif isinstance(node.value, Ellipsis.__class__):
+            new_node = python_ast.ConstantEllipsis(node.kind)
+        elif isinstance(node.value, None.__class__):
+            new_node = python_ast.ConstantNone(node.kind)
+        elif isinstance(node.value, bytes):
+            new_node = python_ast.ConstantBytes(str(node.value), node.kind)
+        else:
+            print(type(node.value))
+            raise Exception("Unsupported Constant type")
+        new_node.first = linecol_to_pos(node.lineno, node.col_offset+1, newlines)
+        new_node.last = linecol_to_pos(node.end_lineno, node.end_col_offset, newlines)
+        return new_node
+
+    def generic_visit(self, node):
+        d = {}
+        class_name = node.__class__.__name__
+        for field, value in ast.iter_fields(node):
+            if field == "ops": # For Compare()
+                # We only represent one comparison operator
+                assert len(value) == 1
+                d[field] = self.visit(value[0])
+            elif isinstance(value, list):
+                new_list = []
+                for item in value:
+                    if isinstance(item, ast.AST):
+                        new_list.append(self.visit(item))
+                    else:
+                        if type(item) == str:
+                            new_list.append(item)
+                        elif item is None:
+                            new_list.append(self.visit(python_ast.ConstantNone()))
+                d[field] = new_list
+            elif field in ["vararg", "kwarg"]:
+                if value is None:
+                    d[field] = []
+                else:
+                    d[field] = [self.visit(value)]
+            elif isinstance(value, ast.AST):
+                d[field] = self.visit(value)
+            elif isinstance(value, (str, int)):
+                d[field] = value
+            elif value is None:
+                d[field] = value
+            else:
+                print("Node type:", class_name)
+                print("Value type:", type(value))
+                raise Exception("Unsupported value type")
+        new_ast = getattr(python_ast, class_name)
+        new_node = new_ast(**d)
+        if hasattr(node, "col_offset"):
+            new_node.first = linecol_to_pos(node.lineno, node.col_offset+1, newlines)
+            new_node.last = linecol_to_pos(node.end_lineno, node.end_col_offset, newlines)
+        else:
+            new_node.first = 1
+            new_node.last = 1
+        return new_node
+
+
+#print()
+v = Transform()
+a2 = v.visit(a)
+#print(a2)
+
+
+# Test the visitor python_ast.AST
+v = python_ast.GenericASTVisitor()
+v.visit(a2)
+
+
+# Serialize
+class Serialization(python_ast.SerializationBaseVisitor):
+
+    def __init__(self):
+        # Start with a "mod" class
+        self.s = "0 "
+
+    def write_int8(self, i):
+        assert i >= 0
+        self.s += str(i) + " "
+
+    def write_int64(self, i):
+        if i < 0:
+            i += 2**64
+        assert i >= 0
+        self.s += str(i) + " "
+
+    def write_float64(self, f):
+        self.s += str(f) + " "
+
+    def write_string(self, s):
+        self.write_int64(len(s))
+        self.s += str(s) + " "
+
+    def write_bool(self, b):
+        if b:
+            self.write_int8(1)
+        else:
+            self.write_int8(0)
+
+v = Serialization()
+v.visit(a2)
+#print()
+#print(v.s)
+
+open(filename_out, "w").write(v.s)
+from lpython import i8, i16, i32, f32, i64, f64, ccall, overload
+
+
+pi: f64 = 3.141592653589793238462643383279502884197
+e: f64 = 2.718281828459045235360287471352662497757
+tau: f64 = 6.283185307179586
+
+
+@overload
+def modf(x: f64) -> tuple[f64, f64]:
+    """
+    Return fractional and integral parts of `x` as a pair.
+
+    Both results carry the sign of x and are floats.
+    """
+    return (x - f64(int(x)), float(int(x)))
+
+@overload
+def factorial(x: i32) -> i32:
+    """
+    Computes the factorial of `x`.
+    """
+
+    result: i32
+    result = 0
+    if x < 0:
+        return result
+    result = 1
+    i: i32
+    for i in range(1, x+1):
+        result *= i
+    return result
+
+@overload
+def factorial(x: i64) -> i64:
+    """
+    Computes the factorial of `x`.
+    """
+    result: i64
+    result = i64(0)
+    if x < i64(0):
+        return result
+    result = i64(1)
+    i: i64
+    for i in range(i64(1), x + i64(1)):
+        result *= i64(i)
+    return result
+
+@overload
+def floor(x: i32) -> i32:
+    return x
+
+@overload
+def floor(x: i64) -> i64:
+    return x
+
+@overload
+def floor(x: f64) -> i64:
+    r: i64
+    r = int(x)
+    if x >= f64(0) or x == f64(r):
+        return r
+    return r - i64(1)
+
+@overload
+def floor(x: f32) -> i32:
+    r: i32
+    r = i32(x)
+    if x >= f32(0) or x == f32(r):
+        return r
+    return r - 1
+
+@overload
+def ceil(x: i32) -> i32:
+    return x
+
+@overload
+def ceil(x: i64) -> i64:
+    return x
+
+@overload
+def ceil(x: f64) -> i64:
+    r: i64
+    r = int(x)
+    if x <= f64(0) or f64(r) == x:
+        return r
+    return r + i64(1)
+
+@overload
+def ceil(x: f32) -> i32:
+    r: i32
+    r = i32(x)
+    if x <= f32(0) or f32(r) == x:
+        return r
+    return r + 1
+
+# fsum
+# supported data types: i32, i64, f32, f64
+
+@overload
+def fsum(arr: list[i32]) -> f64:
+    """
+    Floating-point sum of the elements of `arr`.
+    """
+    sum: f64
+    sum = 0.0
+
+    i: i32
+    for i in range(len(arr)):
+        sum += float(arr[i])
+    return sum
+
+@overload
+def fsum(arr: list[i64]) -> f64:
+    """
+    Floating-point sum of the elements of `arr`.
+    """
+    sum: f64
+    sum = 0.0
+
+    i: i32
+    for i in range(len(arr)):
+        sum += float(arr[i])
+    return sum
+
+@overload
+def fsum(arr: list[f32]) -> f64:
+    """
+    Floating-point sum of the elements of `arr`.
+    """
+    sum: f64
+    sum = 0.0
+
+    i: i32
+    for i in range(len(arr)):
+        sum += float(arr[i])
+    return sum
+
+@overload
+def fsum(arr: list[f64]) -> f64:
+    """
+    Floating-point sum of the elements of `arr`.
+    """
+    sum: f64
+    sum = 0.0
+
+    i: i32
+    for i in range(len(arr)):
+        sum += arr[i]
+    return sum
+
+# prod
+# supported data types: i32, i64, f32, f64
+
+@overload
+def prod(arr: list[i32]) -> f64:
+    """
+    Return the product of the elements of `arr`.
+    """
+
+    result: f64
+    result = 1.0
+    i: i32
+    for i in range(len(arr)):
+        result *= float(arr[i])
+    return result
+
+@overload
+def prod(arr: list[i64]) -> f64:
+    """
+    Return the product of the elements of `arr`.
+    """
+
+    result: f64
+    result = 1.0
+    i: i32
+    for i in range(len(arr)):
+        result *= float(arr[i])
+    return result
+
+@overload
+def prod(arr: list[f32]) -> f64:
+    """
+    Return the product of the elements of `arr`.
+    """
+
+    result: f64
+    result = 1.0
+    i: i32
+    for i in range(len(arr)):
+        result *= float(arr[i])
+    return result
+
+@overload
+def prod(arr: list[f64]) -> f64:
+    """
+    Return the product of the elements of `arr`.
+    """
+
+    result: f64
+    result = 1.0
+    i: i32
+    for i in range(len(arr)):
+        result *= arr[i]
+    return result
+
+
+def dist(x: list[f64], y: list[f64]) -> f64:
+    """
+    Return euclidean distance between `x` and `y` points.
+    """
+    if len(x) != len(y):
+         raise ValueError("Length of lists should be same")
+    res: f64
+    res = 0.0
+
+    i: i32
+    for i in range(len(x)):
+        res += (x[i] - y[i]) * (x[i] - y[i])
+    return res**0.5
+
+
+def comb(n: i32, k: i32) -> i32:
+    """
+    Computes the result of `nCk`, i.e, the number of ways to choose `k`
+    items from `n` items without repetition and without order.
+    """
+
+    if n < k or n < 0:
+        return 0
+    return i32(factorial(n)//(factorial(k)*factorial(n-k)))
+
+
+def perm(n: i32, k: i32) -> i32:
+    """
+    Computes the result of `nPk`, i.e, the number of ways to choose `k` items
+    from `n` items without repetition and with order.
+    """
+
+    if n < k or n < 0:
+        return 0
+    return i32(factorial(n)//factorial(n-k))
+
+
+def isqrt(n: i32) -> i32:
+    """
+    Computes the integer square root of the nonnegative integer `n`.
+    """
+    if n < 0:
+        raise ValueError('`n` should be nonnegative')
+    low: i32
+    mid: i32
+    high: i32
+    low = 0
+    high = n+1
+    while low + 1 < high:
+        mid = i32((low + high)//2)
+        if mid*mid <= n:
+            low = mid
+        else:
+            high = mid
+    return low
+
+# degrees
+# supported data types: i8, i16, i32, i64, f32, f64
+
+@overload
+def degrees(x: i8) -> f64:
+    """
+    Convert angle `x` from radians to degrees.
+    """
+    return f64(x) * 180.0 / pi
+
+@overload
+def degrees(x: i16) -> f64:
+    """
+    Convert angle `x` from radians to degrees.
+    """
+    return f64(x) * 180.0 / pi
+
+@overload
+def degrees(x: i32) -> f64:
+    """
+    Convert angle `x` from radians to degrees.
+    """
+    return f64(x) * 180.0 / pi
+
+@overload
+def degrees(x: i64) -> f64:
+    """
+    Convert angle `x` from radians to degrees.
+    """
+    return f64(x) * 180.0 / pi
+
+@overload
+def degrees(x: f32) -> f64:
+    """
+    Convert angle `x` from radians to degrees.
+    """
+    return f64(x) * 180.0 / pi
+
+@overload
+def degrees(x: f64) -> f64:
+    """
+    Convert angle `x` from radians to degrees.
+    """
+    return x * 180.0 / pi
+
+# radians
+# supported data types: i8, i16, i32, i64, f32, f64
+
+@overload
+def radians(x: i8) -> f64:
+    """
+    Convert angle `x` from degrees to radians.
+    """
+    return f64(x) * pi / 180.0
+
+@overload
+def radians(x: i16) -> f64:
+    """
+    Convert angle `x` from degrees to radians.
+    """
+    return f64(x) * pi / 180.0
+
+@overload
+def radians(x: i32) -> f64:
+    """
+    Convert angle `x` from degrees to radians.
+    """
+    return f64(x) * pi / 180.0
+
+@overload
+def radians(x: i64) -> f64:
+    """
+    Convert angle `x` from degrees to radians.
+    """
+    return f64(x) * pi / 180.0
+
+@overload
+def radians(x: f32) -> f64:
+    """
+    Convert angle `x` from degrees to radians.
+    """
+    return f64(x) * pi / 180.0
+
+@overload
+def radians(x: f64) -> f64:
+    """
+    Convert angle `x` from degrees to radians.
+    """
+    return x * pi / 180.0
+
+# fabs
+# supported data types: i32, i64, f32, f64
+@overload
+def fabs(x: f32) -> f32:
+    """
+    Return the absolute value of `x`.
+    """
+    if x < f32(0.0):
+        return -x
+    return x
+
+@overload
+def fabs(x: f64) -> f64:
+    """
+    Return the absolute value of `x`.
+    """
+    if x < 0.0:
+        return -x
+    return x
+
+@overload
+def fabs(x: i64) -> f64:
+    """
+    Return the absolute value of `x`.
+    """
+    if f64(x) < 0.0:
+        return -float(x)
+    return float(x)
+
+@overload
+def fabs(x: i32) -> f64:
+    """
+    Return the absolute value of `x`.
+    """
+    if f64(x) < 0.0:
+        return -float(x)
+    return float(x)
+
+@overload
+def fabs(x: i16) -> f64:
+    """
+    Return the absolute value of `x`.
+    """
+    if f64(x) < 0.0:
+        return -float(x)
+    return float(x)
+
+@overload
+def fabs(x: i8) -> f64:
+    """
+    Return the absolute value of `x`.
+    """
+    if f64(x) < 0.0:
+        return -float(x)
+    return float(x)
+
+# pow
+# supported data types: i32, i64, f32, f64
+@overload
+def pow(x: f64, y: f64) -> f64:
+    """
+    Return `x` raised to the power  `y`.
+    """
+    if y < 0.0:
+        raise ValueError('y should be nonnegative')
+    result: f64
+    result = x**y
+    return result
+
+
+@overload
+def pow(x: i64, y: i64) -> i64:
+    """
+    Return `x` raised to the power `y`.
+    """
+    if y < i64(0):
+        raise ValueError('y should be nonnegative')
+    return i64(x**y)
+
+@overload
+def pow(x: f32, y: f32) -> f64:
+    """
+    Return `x` raised to the power `y`.
+    """
+    if y < f32(0):
+        raise ValueError('y should be nonnegative')
+    return f64(x**y)
+
+@overload
+def pow(x: i32, y: i32) -> i32:
+    """
+    Return `x` raised to the power `y`.
+    """
+    if y < 0:
+        raise ValueError('y should be nonnegative')
+    result: i32
+    result = x**y
+    return result
+
+@overload
+def ldexp(x: f64, i: i32) -> f64:
+    result: f64
+    result = x * f64(2**i)
+    return result
+
+
+
+def mod(a: i32, b: i32) -> i32:
+    """
+    Returns a%b
+    """
+    return a - i32(a//b)*b
+
+
+def gcd(a: i32, b: i32) -> i32:
+    """
+    Returns greatest common divisor of `a` and `b`
+    """
+    temp: i32
+    a_: i32
+    b_: i32
+    a_ = a
+    b_ = b
+    if a_ < 0:
+        a_ = -a_
+    if b_ < 0:
+        b_ = -b_
+    while b_ != 0:
+        a_ = mod(a_, b_)
+        temp = a_
+        a_ = b_
+        b_ = temp
+    return a_
+
+
+def lcm(a: i32, b: i32) -> i32:
+    """
+    Returns least common multiple of `a` and `b`
+    """
+    a_: i32
+    b_: i32
+    a_ = a
+    b_ = b
+    if a_ < 0:
+        a_ = -a_
+    if b_ < 0:
+        b_ = -b_
+    if a_*b_ == 0:
+        return 0
+    return i32((a_*b_)//gcd(a_, b_))
+
+
+def copysign(x: f64, y: f64) -> f64:
+    """
+    Return `x` with the sign of `y`.
+    """
+    if y > 0.0 or (y == 0.0 and atan2(y, -1.0) > 0.0):
+        return fabs(x)
+    else:
+        return -fabs(x)
+
+
+def hypot(x: i32, y: i32) -> f64:
+    """
+    Returns the hypotenuse of the right triangle with sides `x` and `y`.
+    """
+    return sqrt(f64(1.0)*f64(x**2 + y**2))
+
+@overload
+def trunc(x: f64) -> i64:
+    """
+    Return x with the fractional part removed, leaving the integer part.
+    """
+    if x > f64(0):
+        return floor(x)
+    else:
+        return ceil(x)
+
+@overload
+def trunc(x: f32) -> i32:
+    """
+    Return x with the fractional part removed, leaving the integer part.
+    """
+    if x > f32(0):
+        return floor(x)
+    else:
+        return ceil(x)
+
+def sqrt(x: f64) -> f64:
+    """
+    Returns square root of a number x
+    """
+    return x**(1/2)
+
+def cbrt(x: f64) -> f64:
+    """
+    Returns cube root of a number x
+    """
+    return x**(1/3)
+
+@ccall
+def _lfortran_dsin(x: f64) -> f64:
+    pass
+
+def sin(x: f64) -> f64:
+    return _lfortran_dsin(x)
+
+@ccall
+def _lfortran_dcos(x: f64) -> f64:
+    pass
+
+def cos(x: f64) -> f64:
+    return _lfortran_dcos(x)
+
+@ccall
+def _lfortran_dtan(x: f64) -> f64:
+    pass
+
+def tan(x: f64) -> f64:
+    return _lfortran_dtan(x)
+
+@ccall
+def _lfortran_dlog(x: f64) -> f64:
+    pass
+
+def log(x: f64) -> f64:
+    return _lfortran_dlog(x)
+
+@ccall
+def _lfortran_dlog10(x: f64) -> f64:
+    pass
+
+def log10(x: f64) -> f64:
+    return _lfortran_dlog10(x)
+
+def log2(x: f64) -> f64:
+    return _lfortran_dlog(x)/_lfortran_dlog(2.0)
+
+@ccall
+def _lfortran_derf(x: f64) -> f64:
+    pass
+
+def erf(x: f64) -> f64:
+    return _lfortran_derf(x)
+
+@ccall
+def _lfortran_derfc(x: f64) -> f64:
+    pass
+
+def erfc(x: f64) -> f64:
+    return _lfortran_derfc(x)
+
+@ccall
+def _lfortran_dgamma(x: f64) -> f64:
+    pass
+
+def gamma(x: f64) -> f64:
+    return _lfortran_dgamma(x)
+
+@ccall
+def _lfortran_dlog_gamma(x: f64) -> f64:
+    pass
+
+def lgamma(x: f64) -> f64:
+    return _lfortran_dlog_gamma(x)
+
+@ccall
+def _lfortran_dasin(x: f64) -> f64:
+    pass
+
+def asin(x: f64) -> f64:
+    return _lfortran_dasin(x)
+
+@ccall
+def _lfortran_dacos(x: f64) -> f64:
+    pass
+
+def acos(x: f64) -> f64:
+    return _lfortran_dacos(x)
+
+@ccall
+def _lfortran_datan(x: f64) -> f64:
+    pass
+
+def atan(x: f64) -> f64:
+    return _lfortran_datan(x)
+
+@ccall
+def _lfortran_datan2(y: f64, x: f64) -> f64:
+    pass
+
+def atan2(y: f64, x: f64) -> f64:
+    return _lfortran_datan2(y, x)
+
+@ccall
+def _lfortran_dsinh(x: f64) -> f64:
+    pass
+
+def sinh(x: f64) -> f64:
+    return _lfortran_dsinh(x)
+
+@ccall
+def _lfortran_dcosh(x: f64) -> f64:
+    pass
+
+def cosh(x: f64) -> f64:
+    return _lfortran_dcosh(x)
+
+@ccall
+def _lfortran_dtanh(x: f64) -> f64:
+    pass
+
+def tanh(x: f64) -> f64:
+    return _lfortran_dtanh(x)
+
+@ccall
+def _lfortran_dasinh(x: f64) -> f64:
+    pass
+
+def asinh(x: f64) -> f64:
+    return _lfortran_dasinh(x)
+
+@ccall
+def _lfortran_dacosh(x: f64) -> f64:
+    pass
+
+def acosh(x: f64) -> f64:
+    return _lfortran_dacosh(x)
+
+@ccall
+def _lfortran_datanh(x: f64) -> f64:
+    pass
+
+def atanh(x: f64) -> f64:
+    return _lfortran_datanh(x)
+
+
+def log1p(x: f64) -> f64:
+    return log(1.0 + x)
+
+
+def fmod(x: f64, y: f64) -> f64:
+    if y == 0.0:
+        raise ValueError('math domain error')
+    return _lfortran_dfmod(x, y)
+
+
+@ccall
+def _lfortran_dfmod(x: f64, y: f64) -> f64:
+    pass
+
+
+def remainder(x: f64, y: f64) -> f64:
+    q: i64
+    q = int(x/y)
+    if x - y*f64(q) > y*f64(q + i64(1)) - x:
+        return x - y*f64(q + i64(1))
+    return x - y*f64(q)
+from lpython import i32, i64, ccall
+
+O_RDONLY: i32 # = 0 FIXME: Assign the value 0 to O_RDONLY
+# O_WRONLY: i32 = 1
+# O_RDWR  : i32 = 2
+# O_CREAT : i32 = 64
+# O_APPEND: i32 = 1024
+
+
+def open(path: str, flag: i32) -> i64:
+    """
+    Returns the file descriptor for the newly opened file
+    """
+    sflag: str
+    if flag == O_RDONLY:
+        sflag = "r"
+    else:
+        quit(1) # not implemented yet
+    return _lpython_open(path, sflag)
+
+@ccall
+def _lpython_open(path: str, flag: str) -> i64:
+    pass
+
+def read(fd: i64, n: i64) -> str:
+    """
+    Reads at most `n` bytes from file descriptor
+    """
+    return _lpython_read(fd, n)
+
+@ccall
+def _lpython_read(fd: i64, n: i64) -> str:
+    pass
+
+def close(fd: i64):
+    """
+    Closes the file descriptor
+    """
+    _lpython_close(fd)
+    return
+
+@ccall
+def _lpython_close(fd: i64):
+    pass
+def python_implementation() -> str:
+    return "LPython"
+
+def python_version() -> str:
+     return __LPYTHON_VERSION__from lpython import i32, f64, ccall
+
+e: f64 = 2.718281828459045235360287471352662497757
+eps: f64 = 1e-16
+
+#: TODO: Call `log` from C directly until we fix the multiple import issue
+def _log(x: f64) -> f64:
+    return _lfortran_dlog(x)
+
+@ccall
+def _lfortran_dlog(x: f64) -> f64:
+    pass
+
+def _exp(x: f64) -> f64:
+    return e**x
+
+def _sqrt(x: f64) -> f64:
+    return x**(1/2)
+
+def _abs(x: f64) -> f64:
+    if x < 0.0:
+        return -x
+    return x
+
+def random() -> f64:
+    """
+    Returns a random floating point number in the range [0.0, 1.0)
+    """
+    return _lfortran_random()
+
+@ccall
+def _lfortran_random() -> f64:
+    pass
+
+def randrange(lower: i32, upper: i32) -> i32:
+    """
+    Return a random integer N such that `lower <= N < upper`.
+    """
+    return _lfortran_randrange(lower, upper)
+
+@ccall
+def _lfortran_randrange(lower: i32, upper: i32) -> i32:
+    pass
+
+def randint(lower: i32, upper: i32) -> i32:
+    """
+    Return a random integer N such that `lower <= N <= upper`.
+    """
+    return _lfortran_random_int(lower, upper)
+
+@ccall
+def _lfortran_random_int(lower: i32, upper: i32) -> i32:
+    pass
+
+def uniform(a: f64, b: f64) -> f64:
+    """
+    Get a random number in the range [a, b) or [a, b] depending on rounding.
+    """
+    return a + (b - a) * random()
+
+def paretovariate(alpha: f64) -> f64:
+    """
+    Return a random number from a Pareto distribution with parameter `alpha`.
+    """
+    u: f64
+    u = 1.0 - random()
+    return u ** (-1.0 / alpha)
+
+def expovariate(l: f64) -> f64:
+    """
+    Return a random number from an exponential distribution with parameter
+    `l` (lambda).
+    """
+    assert _abs(l) > eps
+    return -_log(1.0 - random()) / l
+
+def weibullvariate(alpha: f64, beta: f64) -> f64:
+    """
+    Return a random number from a Weibull distribution with parameters `alpha`
+    and `beta`.
+    """
+    assert _abs(beta) > eps
+    return alpha * (-_log(1.0 - random())) ** (1.0 / beta)
+from lpython import i32, f64, i64, f64, overload
+
+
+@overload
+def mean(x: list[i32]) -> f64:
+    """
+    Returns the arithmetic mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    sum: f64
+    sum = 0.0
+    i: i32
+
+    for i in range(k):
+        sum += float(x[i])
+    return sum/f64(k)
+
+
+@overload
+def mean(x: list[i64]) -> f64:
+    """
+    Returns the arithmetic mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    sum: f64
+    sum = 0.0
+    i: i32
+
+    for i in range(k):
+        sum += float(x[i])
+
+    return sum/f64(k)
+
+
+@overload
+def mean(x: list[f32]) -> f64:
+    """
+    Returns the arithmetic mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    sum: f64
+    sum = 0.0
+    i: i32
+
+    for i in range(k):
+        sum += float(x[i])
+    return sum/f64(k)
+
+
+@overload
+def mean(x: list[f64]) -> f64:
+    """
+    Returns the arithmetic mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    sum: f64
+    sum = 0.0
+    i: i32
+
+    for i in range(k):
+        sum += x[i]
+    return sum/f64(k)
+
+
+@overload
+def fmean(x: list[i32]) -> f64:
+    """
+    Returns the floating type arithmetic mean of a data sequence of numbers
+    """
+    return mean(x)
+
+
+@overload
+def fmean(x: list[i64]) -> f64:
+    """
+    Returns the floating type arithmetic mean of a data sequence of numbers
+    """
+    return mean(x)
+
+
+@overload
+def fmean(x: list[f64]) -> f64:
+    """
+    Returns the floating type arithmetic mean of a data sequence of numbers
+    """
+    return mean(x)
+
+
+@overload
+def fmean(x: list[f32]) -> f64:
+    """
+    Returns the floating type arithmetic mean of a data sequence of numbers
+    """
+    return mean(x)
+
+@overload
+def geometric_mean(x: list[i32]) -> f64:
+    """
+    Returns the geometric mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    product: f64
+    product = 1.0
+    i: i32
+
+    for i in range(k):
+        if x[i] <= 0:
+            raise Exception("geometric mean requires a non-empty dataset containing positive numbers")
+        product *= float(x[i])
+
+    return product**(1/k)
+
+@overload
+def geometric_mean(x: list[i64]) -> f64:
+    """
+    Returns the geometric mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    product: f64
+    product = 1.0
+    i: i32
+
+    for i in range(k):
+        if x[i] <= i64(0):
+            raise Exception("geometric mean requires a non-empty dataset containing positive numbers")
+        product *= float(x[i])
+
+    return product ** (1 / k)
+
+@overload
+def geometric_mean(x: list[f64]) -> f64:
+    """
+    Returns the geometric mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    product: f64
+    product = 1.0
+    i: i32
+
+    for i in range(k):
+        if x[i] <= 0.0:
+            raise Exception("geometric mean requires a non-empty dataset containing positive numbers")
+        product *= x[i]
+
+    return product**(1/k)
+
+@overload
+def harmonic_mean(x: list[i32]) -> f64:
+    """
+    Returns the harmonic mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    sum: f64
+    sum = 0.0
+    i: i32
+
+    for i in range(k):
+        if x[i] == 0:
+            return 0.0
+        if x[i] < 0:
+            raise Exception("Harmonic mean does not support negative values")
+        sum += 1 / x[i]
+
+    return f64(k)/sum
+
+@overload
+def harmonic_mean(x: list[i64]) -> f64:
+    """
+    Returns the harmonic mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    sum: f64
+    sum = 0.0
+    i: i32
+
+    for i in range(k):
+        if x[i] == i64(0):
+            return 0.0
+        if x[i] < i64(0):
+            raise Exception("Harmonic mean does not support negative values")
+        sum += i64(1) / x[i]
+    return f64(k)/sum
+
+@overload
+def harmonic_mean(x: list[f64]) -> f64:
+    """
+    Returns the harmonic mean of a data sequence of numbers
+    """
+    k: i32 = len(x)
+    if k == 0:
+        return 0.0
+    sum: f64
+    sum = 0.0
+    i: i32
+
+    for i in range(k):
+        if x[i] == 0.0:
+            return 0.0
+        if x[i] < 0.0:
+            raise Exception("Harmonic mean does not support negative values")
+        sum += 1.0 / x[i]
+
+    return f64(k) / sum
+
+
+# TODO: Use generics to support other types.
+@overload
+def mode(x: list[i32]) -> i32:
+    k: i32 = len(x)
+    c: i32
+    count: dict[i32, i32] = {0: 0}
+
+    # insert keys in the dictionary
+    for c in range(k):
+        count[x[c]] = 0
+
+    # update the frequencies
+    for c in range(k):
+        count[x[c]] = count[x[c]] + 1
+
+    max_count: i32 = 0
+    ans: i32
+    for c in range(k):
+        if max_count < count[x[c]]:
+            max_count = count[x[c]]
+            ans = x[c]
+    return ans
+
+@overload
+def mode(x: list[i64]) -> i64:
+    k: i32 = len(x)
+    c: i32
+    count: dict[i64, i32] = {i64(0): 0}
+
+    # insert keys in the dictionary
+    for c in range(k):
+        count[x[c]] = 0
+
+    # update the frequencies
+    for c in range(k):
+        count[x[c]] = count[x[c]] + 1
+
+    max_count: i32 = 0
+    ans: i64
+    for c in range(k):
+        if max_count < count[x[c]]:
+            max_count = count[x[c]]
+            ans = x[c]
+    return ans
+
+
+@overload
+def variance(x: list[f64]) -> f64:
+    """
+    Returns the variance of a data sequence of numbers
+    """
+    n: i32
+    n = len(x)
+    if n < 1:
+        raise Exception("n > 1 for variance")
+    xmean: f64
+    xmean = mean(x)
+    num: f64
+    num = 0.0
+    i: i32
+    for i in range(n):
+        num += (x[i] - xmean)**2.0
+    return num / f64(n-1)
+
+@overload
+def variance(x: list[i32]) -> f64:
+    """
+    Returns the variance of a data sequence of numbers
+    """
+    n: i32
+    n = len(x)
+    if n < 1:
+        raise Exception("n > 1 for variance")
+    xmean: f64
+    xmean = mean(x)
+    num: f64
+    num = 0.0
+    i: i32
+    for i in range(n):
+        num += (f64(x[i]) - xmean)**2.0
+    return num / f64(n-1)
+
+
+@overload
+def stdev(x: list[f64]) -> f64:
+    """
+    Returns the standard deviation of a data sequence of numbers
+    """
+    return variance(x)**0.5
+
+@overload
+def stdev(x: list[i32]) -> f64:
+    """
+    Returns the standard deviation of a data sequence of numbers
+    """
+    return variance(x)**0.5
+
+
+@overload
+def pvariance(x: list[f64]) -> f64:
+    """
+    Returns the population variance of a data sequence of numbers
+    """
+    n: i32
+    n = len(x)
+    if n < 1:
+        raise Exception("n > 1 for variance")
+    xmean: f64
+    xmean = mean(x)
+    num: f64
+    num = 0.0
+    i: i32
+    for i in range(n):
+        num += (x[i] - xmean)**2.0
+    return num / f64(n)
+
+@overload
+def pvariance(x: list[i32]) -> f64:
+    """
+    Returns the population variance of a data sequence of numbers
+    """
+    n: i32
+    n = len(x)
+    if n < 1:
+        raise Exception("n > 1 for variance")
+    xmean: f64
+    xmean = mean(x)
+    num: f64
+    num = 0.0
+    i: i32
+    for i in range(n):
+        num += (f64(x[i]) - xmean)**2.0
+    return num / f64(n)
+
+
+@overload
+def pstdev(x: list[f64]) -> f64:
+    """
+    Returns the population standard deviation of a data sequence of numbers
+    """
+    return pvariance(x)**0.5
+
+@overload
+def pstdev(x: list[i32]) -> f64:
+    """
+    Returns the population standard deviation of a data sequence of numbers
+    """
+    return pvariance(x)**0.5
+
+@overload
+def correlation(x: list[i32], y: list[i32]) -> f64:
+    """
+    Return the Pearson's correlation coefficient for two inputs.
+    """
+    n: i32 = len(x)
+    m: i32 = len(y)
+    if n != m:
+        raise Exception("correlation requires that both inputs have same number of data points")
+    if n < 2:
+        raise Exception("correlation requires at least two data points")
+    xmean: f64 = mean(x)
+    ymean: f64 = mean(y)
+
+    sxy: f64 = 0.0
+    i: i32
+    for i in range(n):
+        sxy += (f64(x[i]) - xmean) * (f64(y[i]) - ymean)
+
+    sxx: f64 = 0.0
+    j: i32
+    for j in range(n):
+        sxx += (f64(x[j]) - xmean) ** 2.0
+
+    syy: f64 = 0.0
+    k: i32
+    for k in range(n):
+        syy += (f64(y[k]) - ymean) ** 2.0
+    if (sxx * syy) == 0.0:
+        raise Exception('at least one of the inputs is constant')
+    return sxy / (sxx * syy)**0.5
+
+@overload
+def correlation(x: list[f64], y: list[f64]) -> f64:
+    """
+    Return the Pearson's correlation coefficient for two inputs.
+    """
+    n: i32 = len(x)
+    m: i32 = len(y)
+    if n != m:
+        raise Exception("correlation requires that both inputs have same number of data points")
+    if n < 2:
+        raise Exception("correlation requires at least two data points")
+    xmean: f64 = mean(x)
+    ymean: f64 = mean(y)
+
+    sxy: f64 = 0.0
+    i: i32
+    for i in range(n):
+        sxy += (x[i] - xmean) * (y[i] - ymean)
+
+    sxx: f64 = 0.0
+    j: i32
+    for j in range(n):
+        sxx += (f64(x[j]) - xmean) ** 2.0
+
+    syy: f64 = 0.0
+    k: i32
+    for k in range(n):
+        syy += (f64(y[k]) - ymean) ** 2.0
+    if (sxx * syy) == 0.0:
+        raise Exception('at least one of the inputs is constant')
+    return sxy / (sxx * syy)**0.5
+
+@overload
+def covariance(x: list[i32], y: list[i32]) -> f64:
+    """
+    Returns the covariance of a data sequence of numbers
+    """
+    n: i32 = len(x)
+    m: i32 = len(y)
+    if (n < 2 or m < 2) or n != m:
+        raise Exception("Both inputs must be of the same length (no less than two)")
+    xmean: f64 = mean(x)
+    ymean: f64 = mean(y)
+    num: f64
+    num = 0.0
+    i: i32
+    for i in range(n):
+        num += (f64(x[i]) - xmean) * (f64(y[i]) - ymean)
+    return num / f64(n-1)
+
+@overload
+def covariance(x: list[f64], y: list[f64]) -> f64:
+    """
+    Returns the covariance of a data sequence of numbers
+    """
+    n: i32 = len(x)
+    m: i32 = len(y)
+    if (n < 2 or m < 2) or n != m:
+        raise Exception("Both inputs must be of the same length (no less than two)")
+    xmean: f64 = mean(x)
+    ymean: f64 = mean(y)
+    num: f64
+    num = 0.0
+    i: i32
+    for i in range(n):
+        num += (x[i] - xmean) * (y[i] - ymean)
+    return num / f64(n-1)
+
+@overload
+def linear_regression(x: list[i32], y: list[i32]) -> tuple[f64, f64]:
+
+    """
+    Returns the slope and intercept of simple linear regression
+    parameters estimated using ordinary least squares.
+    """
+    n: i32 = len(x)
+    if len(y) !=  n:
+        raise Exception('linear regression requires that both inputs have same number of data points')
+    if n < 2:
+        raise Exception('linear regression requires at least two data points')
+    xmean: f64 = mean(x)
+    ymean: f64 = mean(y)
+
+    sxy: f64 = 0.0
+    i: i32
+    for i in range(n):
+        sxy += (f64(x[i]) - xmean) * (f64(y[i]) - ymean)
+
+    sxx: f64 = 0.0
+    j: i32
+    for j in range(n):
+        sxx += (f64(x[j]) - xmean) ** 2.0
+
+    slope: f64
+
+    if sxx == 0.0:
+        raise Exception('x is constant')
+    else:
+        slope = sxy / sxx
+
+    intercept: f64  = ymean - slope * xmean
+
+    LinReg: tuple[f64, f64] = (slope, intercept)
+
+    return LinReg
+
+@overload
+def linear_regression(x: list[f64], y: list[f64]) -> tuple[f64, f64]:
+
+    """
+    Returns the slope and intercept of simple linear regression
+    parameters estimated using ordinary least squares.
+    """
+    n: i32 = len(x)
+    if len(y) !=  n:
+        raise Exception('linear regression requires that both inputs have same number of data points')
+    if n < 2:
+        raise Exception('linear regression requires at least two data points')
+    xmean: f64 = mean(x)
+    ymean: f64 = mean(y)
+
+    sxy: f64 = 0.0
+    i: i32
+    for i in range(n):
+        sxy += (x[i] - xmean) * (y[i] - ymean)
+
+    sxx: f64 = 0.0
+    j: i32
+    for j in range(n):
+        sxx += (f64(x[j]) - xmean) ** 2.0
+
+    slope: f64
+
+    if sxx == 0.0:
+        raise Exception('x is constant')
+    else:
+        slope = sxy / sxx
+
+    intercept: f64  = ymean - slope * xmean
+
+    LinReg: tuple[f64, f64] = (slope, intercept)
+
+    return LinReg
+from lpython import i32
+
+def exit(error_code: i32):
+    """
+    Exits the program with an error code `error_code`.
+    """
+
+    quit(error_code)
+
+# >----------------------------------- argv ----------------------------------->
+@ccall
+def _lpython_get_argc() -> i32:
+    pass
+
+@ccall
+def _lpython_get_argv(index: i32) -> str:
+    pass
+
+def _lpython_argv() -> list[str]:
+    """
+    Gets the list of command line arguments
+    """
+    argc: i32 = _lpython_get_argc()
+    argv: list[str] = []
+    i: i32
+    for i in range(argc):
+        argv.append(_lpython_get_argv(i))
+    return argv
+
+argv: list[str] = _lpython_argv()
+
+# <----------------------------------- argv -----------------------------------<
+from lpython import f64, ccall
+
+def time() -> f64:
+    return _lfortran_time()
+
+@ccall
+def _lfortran_time() -> f64:
+    pass
