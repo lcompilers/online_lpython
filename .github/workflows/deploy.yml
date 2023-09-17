@@ -39,9 +39,9 @@ jobs:
     - name: Build Site
       shell: bash -l {0}
       run: |
-        ./build.py
+        npm run build
         npm run export
-        echo "dev.lfortran.org" >> out/CNAME
+        echo "dev.lpython.org" >> out/CNAME
       env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 

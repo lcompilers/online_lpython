@@ -38,8 +38,8 @@ else
     git fetch origin
     git checkout gh-pages
 
-    mkdir -p lfortran/$PR_NUMBER
-    cd lfortran/$PR_NUMBER
+    mkdir -p lpython/$PR_NUMBER
+    cd lpython/$PR_NUMBER
     rm -rf *
     mv $D/deploy/* .
 fi
