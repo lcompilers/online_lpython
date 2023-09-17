@@ -176,13 +176,13 @@ function LoadLFortran({
     const setupLFortran = useCallback(async () => {
         await setup_lfortran_funcs(lfortran_funcs, myPrint);
         setModuleReady(true);
-        openNotification("LFortran Module Initialized!", "bottomRight");
-        console.log("LFortran Module Initialized!");
+        openNotification("LPython Module Initialized!", "bottomRight");
+        console.log("LPython Module Initialized!");
     }, [moduleReady]); // update the callback if the state changes
 
     return (
         <div>
-            <Script src={`${basePath}/lfortran.js`} onLoad={setupLFortran}></Script>
+            <Script src={`${basePath}/lpython.js`} onLoad={setupLFortran}></Script>
         </div>
     );
 }

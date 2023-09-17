@@ -5,7 +5,7 @@ import HeadMeta from './HeadMeta';
 
 const items = [
     {
-        label: <><HomeOutlined /> LFortran</>,
+        label: <><HomeOutlined /> LPython</>,
         key: "1"
     }
 ]

@@ -22,11 +22,13 @@ function TextBox({ disabled, sourceCode, setSourceCode, exampleName, setExampleN
             });
         }
 
-        menu_items.push({
-            key: category,
-            label: category,
-            children: category_examples
-        });
+        if (category_examples.length > 0) {
+            menu_items.push({
+                key: category,
+                label: category,
+                children: category_examples
+            });
+        }
     }
 
     const examples_menu = (<Menu items={menu_items}></Menu>);
@@ -44,7 +46,7 @@ function TextBox({ disabled, sourceCode, setSourceCode, exampleName, setExampleN
     return (
         <div className="card-container" style={{height: "100%" }}>
             <Tabs tabBarExtraContent={extraOperations} style={{ height: "100%" }}>
-                <TabPane tab={`${exampleName}.f90`} key="1" style={{ height: myHeight }}>
+                <TabPane tab={`${exampleName}.py`} key="1" style={{ height: myHeight }}>
                     <Editor
                         sourceCode={sourceCode}
                         setSourceCode={setSourceCode}
