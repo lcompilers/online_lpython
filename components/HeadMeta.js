@@ -3,10 +3,10 @@ import Head from "next/head";
 function HeadMeta() {
     return (
         <Head>
-            <title>LFortran</title>
+            <title>LPython</title>
             <meta
                 name="description"
-                content="This is LFortran Compiler"
+                content="This is LPython Compiler"
             />
             <link rel="icon" href="./favicon.ico" />
             <meta
