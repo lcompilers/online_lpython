@@ -12,6 +12,7 @@ if __name__ == "__main__":
     main0()
 `,
     mandelbrot: `from lpython import i32, f64, TypeVar, Const
+from numpy import empty, int32
 
 h = TypeVar("h")
 w = TypeVar("w")
