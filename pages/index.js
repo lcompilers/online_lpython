@@ -85,7 +85,7 @@ export default function Home() {
                     openNotification("error fetching .", "bottomRight");
                 });
         } else {
-            setSourceCode(preinstalled_programs.basic.simple);
+            setSourceCode(preinstalled_programs.basic.mandelbrot);
             setDataFetch(true);
             if(urlParams.size>0){
                 openNotification("The URL contains an invalid parameter.", "bottomRight");

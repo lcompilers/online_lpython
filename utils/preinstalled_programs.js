@@ -11,41 +11,47 @@ def main0():
 if __name__ == "__main__":
     main0()
 `,
-    mandelbrot: `@ccall
+    mandelbrot: `from lpython import i32, f64, TypeVar, Const
+
+h = TypeVar("h")
+w = TypeVar("w")
+
+@jscall
 def show_img(w: i32, h: i32, A: i32[h, w]):
     pass
 
-@ccall
+@jscall
 def show_img_color(w: i32, h: i32, A: i32[h, w, 4]):
     pass
 
 def main0():
-    Nx: i32 = 600; Ny: i32 = 450; n_max: i32 = 255
+    Nx: Const[i32] = 600; Ny: Const[i32] = 450; Nz: Const[i32] = 4; n_max: i32 = 255
 
-    xcenter: f64 = -0.5; ycenter: f64 = 0.0
-    width: f64 = 4; height: f64 = 3
-    dx_di: f64 = width/Nx; dy_dj: f64 = -height/Ny
-    x_offset: f64 = xcenter - (Nx+1)*dx_di/2; y_offset: f64 = ycenter - (Ny+1)*dy_dj/2
+    xcenter: f64 = f64(-0.5); ycenter: f64 = f64(0.0)
+    width: f64 = f64(4); height: f64 = f64(3)
+    dx_di: f64 = width/f64(Nx); dy_dj: f64 = -height/f64(Ny)
+    x_offset: f64 = xcenter - f64(Nx+1)*dx_di/f64(2.0)
+    y_offset: f64 = ycenter - f64(Ny+1)*dy_dj/f64(2.0)
 
     i: i32; j: i32; n: i32; idx: i32
     x: f64; y: f64; x_0: f64; y_0: f64; x_sqr: f64; y_sqr: f64
 
-    image: i32[450, 600] = empty(Ny, Nx)
-    image_color: i32[450, 600, 4] = empty(Ny, Nx, 4)
-    palette: i32[4, 3] = empty(4, 3)
+    image: i32[450, 600] = empty([Ny, Nx], dtype=int32)
+    image_color: i32[450, 600, 4] = empty([Ny, Nx, Nz], dtype=int32)
+    palette: i32[4, 3] = empty([4, 3], dtype=int32)
 
     for j in range(Ny):
-        y_0 = y_offset + dy_dj * (j + 1)
+        y_0 = y_offset + dy_dj * f64(j + 1)
         for i in range(Nx):
-            x_0 = x_offset + dx_di * (i + 1)
+            x_0 = x_offset + dx_di * f64(i + 1)
             x = 0.0; y = 0.0; n = 0
             while(True):
                 x_sqr = x ** 2.0
                 y_sqr = y ** 2.0
-                if (x_sqr + y_sqr > 4 or n == n_max):
+                if (x_sqr + y_sqr > f64(4) or n == n_max):
                     image[j,i] = 255 - n
                     break
-                y = y_0 + 2 * x * y
+                y = y_0 + f64(2.0) * x * y
                 x = x_0 + x_sqr - y_sqr
                 n = n + 1
 
@@ -56,7 +62,7 @@ def main0():
 
     for j in range(Ny):
         for i in range(Nx):
-            idx = image[j,i] - int(image[j,i]/4)*4
+            idx = image[j,i] - i32(image[j,i]/4)*4
             image_color[j,i,0] = palette[idx,0] # Red
             image_color[j,i,1] = palette[idx,1] # Green
             image_color[j,i,2] = palette[idx,2] # Blue
